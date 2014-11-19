@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/com/squareup/okhttp/internal/spdy
+END
+SpdyConnection.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/com/squareup/okhttp/internal/spdy/SpdyConnection.java
+END
+HeadersMode.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/com/squareup/okhttp/internal/spdy/HeadersMode.java
+END
+Settings.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/com/squareup/okhttp/internal/spdy/Settings.java
+END
+Spdy3.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/com/squareup/okhttp/internal/spdy/Spdy3.java
+END
+ErrorCode.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/com/squareup/okhttp/internal/spdy/ErrorCode.java
+END
+Variant.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/com/squareup/okhttp/internal/spdy/Variant.java
+END
+Hpack.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/com/squareup/okhttp/internal/spdy/Hpack.java
+END
+FrameWriter.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/com/squareup/okhttp/internal/spdy/FrameWriter.java
+END
+Http20Draft06.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/com/squareup/okhttp/internal/spdy/Http20Draft06.java
+END
+NameValueBlockReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/com/squareup/okhttp/internal/spdy/NameValueBlockReader.java
+END
+SpdyStream.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/com/squareup/okhttp/internal/spdy/SpdyStream.java
+END
+FrameReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/com/squareup/okhttp/internal/spdy/FrameReader.java
+END
+IncomingStreamHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/com/squareup/okhttp/internal/spdy/IncomingStreamHandler.java
+END
+Ping.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/com/squareup/okhttp/internal/spdy/Ping.java
+END

@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/winway1234/!svn/ver/2/trunk/cordova
+END
+build
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/winway1234/!svn/ver/2/trunk/cordova/build
+END
+log
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/winway1234/!svn/ver/2/trunk/cordova/log
+END
+clean
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/winway1234/!svn/ver/2/trunk/cordova/clean
+END
+build.bat
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/winway1234/!svn/ver/2/trunk/cordova/build.bat
+END
+run
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/winway1234/!svn/ver/2/trunk/cordova/run
+END
+version
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/winway1234/!svn/ver/2/trunk/cordova/version
+END
+android_sdk_version
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/winway1234/!svn/ver/2/trunk/cordova/android_sdk_version
+END
+defaults.xml
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/winway1234/!svn/ver/2/trunk/cordova/defaults.xml
+END
+log.bat
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/winway1234/!svn/ver/2/trunk/cordova/log.bat
+END
+check_reqs
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/winway1234/!svn/ver/2/trunk/cordova/check_reqs
+END
+clean.bat
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/winway1234/!svn/ver/2/trunk/cordova/clean.bat
+END
+run.bat
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/winway1234/!svn/ver/2/trunk/cordova/run.bat
+END
+version.bat
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/winway1234/!svn/ver/2/trunk/cordova/version.bat
+END

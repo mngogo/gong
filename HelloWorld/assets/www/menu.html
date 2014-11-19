@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+		<meta name="misapplication-tap-highlight" content="no"/>
+		<meta name="HandheldFriendly" content="true"/>
+		<meta name="MobileOptimized" content="320"/>
+		<title>Hello H5+</title>
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8"/>
+		<script type="text/javascript" charset="utf-8">
+			function clicked(){
+				window.location.href="about.html"; 
+			}
+        </script>
+	</head>
+	<body onselectstart="return false;">
+		<header>
+			<div style="width:15%;height:100%;float:left;"></div>
+			<div class="nvtt">功过格</div>
+			<div class="nvbt iabout" onclick="clicked();"></div>
+		</header>
+		<div id="content" class="content">
+		<style>
+			/**grid 自适应代码**/
+			html, body, .mui-content {
+				height: 100%;
+			}
+			.mui-content > .mui-table-view:first-child {
+				margin-top: 0px;
+			}
+			.mui-content {
+				position: relative;
+			}
+			.mui-grid-view {
+				position: absolute;
+				top: 45px;
+				bottom: 0;
+				min-height: 330px;
+			}
+			.mui-table-view.mui-grid-view .mui-table-view-cell {
+				height: 25%;
+			}
+		
+			.mui-table-view.mui-grid-view .mui-table-view-cell > a:not(.mui-btn) {
+				position: absolute;
+				top: 50%;
+				margin-top: -60px;
+				left: 50%;
+				margin-left: -38px;
+			}
+		</style>
+		<style type="text/css">
+			li {
+				padding:1.5em;
+				border-bottom:1px solid #eaeaea;
+			}
+			
+			li:active {
+				background:#f4f4f4;
+			}
+			.iabout {
+				background:no-repeat center center url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABYCAYAAAADWlKCAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAK6wAACusBgosNWgAAABZ0RVh0Q3JlYXRpb24gVGltZQAwOS8xMi8xM5w+I3MAAAAcdEVYdFNvZnR3YXJlAEFkb2JlIEZpcmV3b3JrcyBDUzVxteM2AAADkUlEQVR4nO2b63HTQBRGTxj+EyrAVBAzWwBKBYQO0kHcAU4HTgehApwKUArYwa4ApwJwBeGHNuAY2URaSfczuWcmk3jH+xid7N596ej+/h5HhxfWDXAe40LEcCFiuBAxXIgYLkQMFyKGCxHDhYjhQsRwIWK4EDFciBguRAwXIoYLEcOFiOFCxHAhYrgQMVyIGC5EDBcihgsRw4WI4ULEeGndgKbEGEdAkX7GwMmOry6BBVAC8xDCz/5bl8/RodztjTEWwAT40LKIG2AWQii7alMfyAuJMY6BGfC+oyJvgamqGGkhMcYZcNFT8VchhElPZbdGUkiM8Zhq7N8VH7piCRRK8UVulpWGqJL+ZZDqWKQ6JZDqIalnLIA3GcUs0+8mQmV6iloPKWkv4zPwOoQwDiGMgVNg/cS8J6luc2R6SGYAvw0hFDVlzmk2TTYP9BI9JK0xcmZTsx3pq4blXFjHEwkhwLSncs9a5NkldxDMh6zUO75mFvMoKKfJwTXtV/WnVgtHhb2sLsbsE2AVY1ykz7mr+glGQd60h6T/5B9mDdjP2xDCauhKrWNImzF+KAqLSq2FFMb176OwqNRaSFdTzDvgkmqYOaJaFOZiMv21Duq5+1VrYBJCuN5MDCGUMcbMogfZS/sL6x6SwyUw2pYBvycLB8khCllTrROmwPGOh18M2qIOOUQh58AorTm+Uz/WF0M2qEusY0gbvmx+2LGiLgZpSQ8cYg/Z5HY7IQ1hJgG5C6yFLP/9lb0satKKzDIfyG1bK6yF1D3QJpQ1aV2t/nPb1gprIWUP+YvMMveV3TuHLGS5fQaebjXmnMdvMu+onEaYCkm7qTcts5c1aaONv6+oztnbcGN14cG6h0D7E7qyJm1F2tOiOoVsux9ldmpofmIIEGMsaX6otPO8Ip2Lz2k3fNVemBgKlYXhBPjWJEOdjLQGmQCfMtoyzcibjUQPgVbXgD6GEOYp7zHVlsqEvKBufg1IRghA2p966ip7zZ+1Qhc345fpgp0pCkF9k4Knr5BfUYnoQsYdIvtfUkLSVPOc6gENxRI4U7jXC2JD1gPP+XUESSEPPMcXdqSGrG3SAzulZps9g1vgnaIMEO8hm/hLn6Kk+HJGs9eiS4tbiG04OCH/O9Ix5DniQsRwIWK4EDFciBguRAwXIoYLEcOFiOFCxHAhYrgQMVyIGC5EDBcihgsRw4WI4ULEcCFiuBAxfgHyQw1G9FJgWwAAAABJRU5ErkJggg==);
+				background-size:50px 44px;
+			}
+			.item {
+				display:block;
+				background:no-repeat right center url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAsCAYAAAB/nHhDAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAKwwAACsMBNCkkqwAAABZ0RVh0Q3JlYXRpb24gVGltZQAwNC8yOC8xMqLz6JEAAAAcdEVYdFNvZnR3YXJlAEFkb2JlIEZpcmV3b3JrcyBDUzVxteM2AAABJ0lEQVRYhe3Wv6rCMBQG8C/VN1AEd3HSzuYO3jr4knkY0UE62xTBcp9A8A0uHhc72CZp/lQQyZmT7xfSJKeMiPDOSt6aHoEIRKAbkLKioqiCrroWkLKi+51ARAhBlEAdXlcI0gLK8u8lPBRpAYvFjCUJUw72QZRbtFzOe0O0H7kvxHhM83yfhiJdF+2c5/utCTmdLnS93rQQs2mZQogN59lOdbrqmk7HmExGrZVYAU9kzXl2cEWsgSfys1r9Hk1TmogTAABFcTFOaQJOr6mUlVO4E9B8n2zCrQHfcAAYmoKFEAPOs39dOGMMaTpXX5J6jGlTTSu3CQcsGk5IuBboK1wJ6BqOT7gS0DUcn3AlALR7gW84YHGKiOAd3gn0UV/+6xiBCHwG8AByzMrOPKV7sAAAAABJRU5ErkJggg==);
+				background-size:12px 22px;
+				-ms-touch-action:auto;
+			}
+			.chs {
+				font-size:0.8em;
+				color:#838383;
+			}
+		</style>
+		
+    <ul class="mui-table-view mui-hidden" style="margin-bottom:0px;">
+        <li class="mui-table-view-cell">cared
+            <div id="M_Toggle_Grid_Carded" class="mui-switch mui-active">
+                <div class="mui-switch-handle"></div>
+            </div>
+        </li>
+    </ul>
+    <div class="mui-card">
+       
+	<ul class="mui-table-view mui-grid-view mui-grid-9"  id="plist">
+		
+		<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+		<a href="New/SelectSeed.html"  data-ajax="false">
+				<span class="mui-icon mui-icon-compose">
+				<div class="mui-media-body">
+					记录种子
+				</div>
+				</a>
+		</li>
+		
+		<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+		<a href="New/todaybest.html"  data-ajax="false">
+				<span class="mui-icon mui-icon-star"></span>
+				<div class="mui-media-body">
+					最好种子
+				</div>
+				</a>
+		</li>
+		
+		<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+		<a href="New/today.html"  data-ajax="false">
+				<span class="mui-icon mui-icon-paperplane"></span>
+				<div class="mui-media-body">
+					今天记录
+				</div>
+				</a>
+		</li>
+		
+		<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+		<a href="New/search.html"  data-ajax="false">
+				<span class="mui-icon mui-icon-search"></span>
+				<div class="mui-media-body">
+					历史查询
+				</div>
+				</a>
+		</li>
+		
+			<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+			<a href="New/todo.html"  data-ajax="false">
+				<span class="mui-icon mui-icon-flag"><span class="mui-badge" id="m" style="display:none"><div id="count"></div></span></span></span>
+				<div class="mui-media-body">
+					我要完成
+				</div>
+				</a>
+		</li>
+		
+		
+		<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+		<a href="html/tongbu/seedup.html">
+				<span class="mui-icon mui-icon-upload"><span class="mui-badge" id="n" style="display:none"><div id="counts"></div></span></span>
+				<div class="mui-media-body">
+					种子上传
+				</div>
+				</a>
+		</li>
+		
+		<li  class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+		<a href="html/server/Notice/notice.html">
+				<span class="mui-icon mui-icon-chatbubble"></span>
+				<div class="mui-media-body">
+					通知公告
+				</div>
+				</a>
+		</li>
+		
+		
+		
+		<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+		<a id="user" href="Login/default.html">
+				<span class="mui-icon mui-icon-contact"></span>
+				<div class="mui-media-body">
+					我的账户
+				</div>
+				</a>
+		</li>
+		
+		<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+		<a href="html/tongbu/seeddown.html">
+				<span class="mui-icon mui-icon-download"></span>
+				<div class="mui-media-body">
+					种子下载
+				</div>
+		</li>
+		
+		<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+		<a href="html/server/Team/team.html">
+				<span class="mui-icon mui-icon-home"></span>
+				<div class="mui-media-body">
+					团队记录
+				</div>
+				</a>
+		</li>
+		
+		
+		
+		<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+		<a href="html/counter/counterlist.html">
+				<span class="mui-icon mui-icon-plus"></span>
+				<div class="mui-media-body">
+					计数器
+				</div>
+		</li>
+		
+		<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+		<a href="html/set/default.html">
+				<span class="mui-icon mui-icon-gear"></span>
+				<div class="mui-media-body">
+                                             我的设置
+				</div>
+				</a>
+		</li>
+			
+	</ul>
+    <script>
+		window.onload = function() { 
+			//创建数据库
+			 var db = openDatabase("gBookdb", "1.0", "gbook DB", 1 *1024 * 1024);
+			// 查询未完成的事情
+			db.transaction( function(tx) { 
+			    tx.executeSql(
+			        "SELECT * FROM seed WHERE ifFinish=0", [],  
+			         function(tx, result) {
+			            var rows = result.rows, length = rows.length;
+			            document.getElementById("count").innerHTML=length;
+			            if (length==0) {
+			            	document.getElementById("m").style.display='none';
+			            } else{
+			            	document.getElementById("m").style.display='block';
+			            }
+			            
+			        }, 
+			        function(tx, error){
+			            //alert('Select Failed: ' + error.message);
+			        }
+			    ); 
+			}); 
+			
+			//查询未上传的种子
+			db.transaction( function(tx) { 
+			    tx.executeSql(
+			        "SELECT * FROM seed WHERE ifup=0", [],  
+			         function(tx, result) {
+			            var rows = result.rows, length = rows.length;
+			            document.getElementById("counts").innerHTML=length;
+			            if (length==0) {
+			            	document.getElementById("n").style.display='none';
+			            } else{
+			            	document.getElementById("n").style.display='block';
+			            }
+			            
+			        }, 
+			        function(tx, error){
+			            //alert('Select Failed: ' + error.message);
+			        }
+			    ); 
+			}); 
+			
+			 var db = openDatabase("gBookdb", "1.0", "gbook DB", 1 *1024 * 1024);
+				 db.transaction(function (tx) {
+		            tx.executeSql('SELECT * FROM user', [], function (tx, result) {
+			            var rows = result.rows, length = rows.length;
+			               if(length==0)
+			               {
+			                document.getElementById ('user').href="file:///android_asset/www/Login/default.html";
+			               }else{
+			                 document.getElementById ('user').href="file:///android_asset/www/Login/userinfo.html";
+			               }
+			         });
+		   		 }); 
+		   		 
+			};
+			</script>
+</div>
+	
+		
+	</body>
+</html>

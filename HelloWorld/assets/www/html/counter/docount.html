@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>CSDN</title>
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="../../css/mui.min.css">
+    <script src="../../js/mui.min.js"></script>
+	<script src="../../js/app.js"></script>
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8"/>
+    <script src="../../js/jquery.js"></script>
+    <script src="../../js/jquery.mobile-1.4.4.min.js"></script> 
+    <style>
+    	html{
+    		overflow: hidden;
+    	}
+    </style>
+       <style>
+			html,body {
+				background-color: #000000;
+			}
+		</style>
+		
+	<script>
+		function checkRight(){
+			var x=document.getElementById('count').innerHTML;
+			x=parseInt(x)+1;
+			document.getElementById('count').innerHTML = x;
+			//更新最新的数据到数据库
+			var db = openDatabase('gBookdb', '1.0', 'gbook DB', 5 * 1024 * 1024);
+		    //获取数据
+			var id= document.getElementById("seedid").innerHTML;
+			var count= x;
+			var sql='update count set  add1="'+count+'" where id="'+id+'"';
+	        // 插入数据
+			db.transaction(function(tx) { 
+			    tx.executeSql(sql); 
+			}); 
+					
+			//更新结束		
+		}
+	</script>
+	<script type="text/javascript">
+		
+		window.onload = function() { 
+			 var id= window.localStorage.getItem("countid1");
+			 document.getElementById("seedid").innerHTML=id;
+			
+		    //创建数据库
+			
+		     var ID = document.getElementById("seedid").innerHTML;
+		     var db = openDatabase('gBookdb', '1.0', 'gbook DB', 5 * 1024 * 1024); 
+		     // 查询 type,begin,end,begintime,endtime
+			db.transaction( function(tx) { 
+			    tx.executeSql(
+			        "SELECT * FROM count WHERE id="+ID, [],  
+			         function(tx, result) {
+			            var rows = result.rows, length = rows.length, i=0;
+			            document.getElementById("count").innerHTML=rows.item(0)['add1'];
+			        }, 
+			        function(tx, error){
+			            //alert('Select Failed: ' + error.message);
+			        }
+			    ); 
+			}); 
+		 
+	
+		
+		}; 
+        
+		</script>
+</head>
+<body  style="height:600px" onclick="checkRight()">
+		
+	<div id="seedid" style="display: none"></div>
+	<div class="mui-content-padded" style="margin: 100px;">
+		
+		<div id="seedid" style="display: none"></div>
+		
+	
+		<br /><br /><br />
+      <center><h2><font color="#FFFFFF"><span id="count">1</span></font></h2>
+      
+      </center>
+	</div>
+</body>
+</html>

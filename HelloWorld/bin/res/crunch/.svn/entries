@@ -1,0 +1,67 @@
+10
+
+dir
+2
+http://code.taobao.org/svn/winway1234/trunk/bin/res/crunch
+http://code.taobao.org/svn/winway1234
+
+
+
+2014-10-13T05:03:13.682657Z
+2
+xiewenru
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8e058cc5-f3ee-49ff-bbae-a791d0a6ab0a
+
+drawable-land-hdpi
+dir
+
+drawable
+dir
+
+drawable-hdpi
+dir
+
+drawable-land-ldpi
+dir
+
+drawable-land-mdpi
+dir
+
+drawable-port-hdpi
+dir
+
+drawable-land-xhdpi
+dir
+
+drawable-ldpi
+dir
+
+drawable-mdpi
+dir
+
+drawable-port-ldpi
+dir
+
+drawable-port-mdpi
+dir
+
+drawable-xhdpi
+dir
+
+drawable-port-xhdpi
+dir
+

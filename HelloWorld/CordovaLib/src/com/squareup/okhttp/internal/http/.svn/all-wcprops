@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/com/squareup/okhttp/internal/http
+END
+RouteSelector.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/com/squareup/okhttp/internal/http/RouteSelector.java
+END
+Policy.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/com/squareup/okhttp/internal/http/Policy.java
+END
+AbstractHttpInputStream.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/com/squareup/okhttp/internal/http/AbstractHttpInputStream.java
+END
+HttpURLConnectionImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/com/squareup/okhttp/internal/http/HttpURLConnectionImpl.java
+END
+HttpEngine.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/com/squareup/okhttp/internal/http/HttpEngine.java
+END
+HeaderParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/com/squareup/okhttp/internal/http/HeaderParser.java
+END
+HttpAuthenticator.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/com/squareup/okhttp/internal/http/HttpAuthenticator.java
+END
+OkResponseCacheAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/com/squareup/okhttp/internal/http/OkResponseCacheAdapter.java
+END
+HttpDate.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/com/squareup/okhttp/internal/http/HttpDate.java
+END
+RequestHeaders.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/com/squareup/okhttp/internal/http/RequestHeaders.java
+END
+RawHeaders.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/com/squareup/okhttp/internal/http/RawHeaders.java
+END
+RetryableOutputStream.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/com/squareup/okhttp/internal/http/RetryableOutputStream.java
+END
+HttpsURLConnectionImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/com/squareup/okhttp/internal/http/HttpsURLConnectionImpl.java
+END
+HttpsEngine.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/com/squareup/okhttp/internal/http/HttpsEngine.java
+END
+ResponseHeaders.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/com/squareup/okhttp/internal/http/ResponseHeaders.java
+END
+HttpTransport.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/com/squareup/okhttp/internal/http/HttpTransport.java
+END
+SpdyTransport.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/com/squareup/okhttp/internal/http/SpdyTransport.java
+END
+Transport.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/com/squareup/okhttp/internal/http/Transport.java
+END
+UnknownLengthHttpInputStream.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/com/squareup/okhttp/internal/http/UnknownLengthHttpInputStream.java
+END

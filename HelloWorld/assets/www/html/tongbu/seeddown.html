@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>功过格</title>
+    <link rel="stylesheet" href="../../css/themes/default/jquery.mobile-1.4.4.min.css">
+    <link rel="stylesheet" href="../../_assets/css/jqm-demos.css">
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8"/>
+    <link rel="stylesheet" href="../../css/mui.min.css">
+    <script src="../../js/jquery.js"></script>
+    <script src="../../_assets/js/index.js"></script> 
+    <script src="../../js/jquery.mobile-1.4.4.min.js"></script>  
+    <script type="text/javascript" src="../../js/common.js"></script>
+    <script src="../../js/mui.min.js"></script>
+    <script src="../../js/app.js"></script>
+</head>
+<body>
+<div data-role="page" class="jqm-demos ui-responsive-panel" id="panel-responsive-page1" data-title="功过格">
+ <link rel="stylesheet" href="../../js/jquery.mobile.datepicker.css">
+  <script src="../../js/jquery.ui.datepicker.js"></script>
+  <script id="mobile-datepicker" src="../../js/jquery.mobile.datepicker.js"></script> 
+   <header>
+			<div class="nvbt iback" onclick="back(true);"></div>
+			<div class="nvtt">下载记录</div>
+		</header>
+     <br>
+    <div role="main"  class="ui-content jqm-content jqm-fullwidth">
+    <br>
+    <center><div id="savename"style="display:block"><img src="../../img/down.png"/></div></center><br>
+    <center><div id="success" style="display:none"><img src="../../img/down.png"/></div></center><br>
+    <center><div id="result">请先选择时间段！</div></center>
+    
+     <div class='error' id="error"></div>
+	  <label for="begintime">开始时间:</label>
+	  <input type="text" name="begintime" id="begintime" data-role="date">
+	  <label for="endtime">结束时间:</label>
+	  <input type="text" name="endtime" id="endtime" data-role="date">
+	  <br><center>
+	  <a href="#" id="seedsdown" data-icon="arrow-d" data-role="button" data-inline="true" data-theme="e">下载种子记录</a></center>
+   
+	</div><!-- /content 	-->
+
+
+	 <script language="javascript">
+	 var loginname="none";
+	 $(function(){
+      $("#error").html('').hide(); 
+        
+	   $("#seedsdown").click(function(){
+	        var begintime = $.trim($("#begintime").val());
+	        if (begintime == ''){
+	          $("#error").html('请输入开始日期').show();
+	    	 }
+		    var endtime = $.trim($("#endtime").val());
+	        if (endtime == ''){
+	          $("#error").html('请输入结束日期').show();
+	    	 }
+	        else
+	        {
+	          var begintime = $("#begintime").val();
+	          var endtime =  $("#endtime").val();
+	        }
+	          var m1= begintime.substring(0, 2); 
+	          var d1= begintime.substring(3, 5); 
+	          var y1= begintime.substring(6); 
+	          var m2= endtime.substring(0, 2); 
+	          var d2= endtime.substring(3, 5); 
+	          var y2= endtime.substring(6);
+	          begintime=y1+"-"+m1+"-"+d1;
+	          endtime=y2+"-"+m2+"-"+d2;
+	          
+	         var db = openDatabase('gBookdb', '1.0', 'gbook DB', 5 * 1024 * 1024);
+		     db.transaction(function (context) {
+		
+			   //获取用户 
+	           context.executeSql('SELECT * FROM user', [], function (context, results) {
+		            var len = results.rows.length;
+					if(len==0)
+					{
+					alert("请先登录再进行下载！");
+					}else {
+			         loginname=results.rows.item(0).name;
+			         //验证下载结果
+			        $.ajax({ 
+				        type: "POST",
+				        url: "http://182.254.242.217:801/App/SeedDowsn.aspx?username="+loginname+"&begintime="+begintime+"&endtime="+endtime+"",async:false,
+				        dataType: "json",
+			            success: function(data) {
+				             
+				             //遍历结果
+				             $.each(data['ds'], function(i, n){
+				             //把通知存储到本地数据库
+						   	 var db = openDatabase('gBookdb', '1.0', 'gbook DB', 5 * 1024 * 1024);
+						   	 db.transaction(function (context) {
+				             context.executeSql('CREATE TABLE IF NOT EXISTS seed (id INTEGER PRIMARY KEY, seedtype text, goodseed text,wrongseed text,wantseed text,addYear text,addMonth text,AddDay text,addHour text,addMinute text,IfSee text,IfFinish text,addTime text,ifup INTEGER,uuid INTEGER)');
+				             context.executeSql("select * from seed where uuid='"+n.uuid+"';", [], function (context, results) {
+						        var len = results.rows.length, i;
+						        if(len>0){
+							      context.executeSql('update seed (seedtype,goodseed,wrongseed,wantseed,addYear,addMonth,AddDay,addHour,addMinute,IfSee,IfFinish,addTime,ifup,uuid values("'+n.seedtype+'", "'+n.goodseed+'", "'+n.wrongseed+'", "'+n.wantseed+'", "'+n.addYear+'", "'+n.addMonth+'", "'+n.AddDay+'", "'+n.addHour+'", "'+n.addMinute+'", "'+n.IfSee+'", "'+n.IfFinish+'", "'+n.adddate+'", "1", "'+n.uuid+'" )');
+							    }else{
+							      context.executeSql('INSERT INTO seed (seedtype,goodseed,wrongseed,wantseed,addYear,addMonth,AddDay,addHour,addMinute,IfSee,IfFinish,addTime,ifup,uuid)  VALUES ("'+n.seedtype+'", "'+n.goodseed+'", "'+n.wrongseed+'", "'+n.wantseed+'", "'+n.addYear+'", "'+n.addMonth+'", "'+n.AddDay+'", "'+n.addHour+'", "'+n.addMinute+'", "'+n.IfSee+'", "'+n.IfFinish+'", "'+n.adddate+'", "1", "'+n.uuid+'" )');
+							    }
+						        });
+					         }); 
+						   	 //存储结束
+				             }); 
+				             //遍历结束
+						   	 
+				             document.getElementById("success").style.display='block';
+				             document.getElementById("savename").style.display='none';
+				             document.getElementById('result').innerHTML = '种子记录下载成功！';
+		            	},
+		            	 error: function(){
+					       	 document.getElementById('result').innerHTML = '温馨提示:请确认已连接网络！';
+					   	} 
+			       });  
+			       //上传结束  
+			  
+				}
+					
+	            });
+	           //获取结束
+        }); 
+	   	  
+		
+		});
+		});
+		
+		
+	</script>
+</div> 
+</body>
+</html>

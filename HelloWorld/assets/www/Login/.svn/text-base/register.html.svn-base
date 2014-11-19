@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>功过格</title>
+    <link rel="stylesheet" href="../css/themes/default/jquery.mobile-1.4.4.min.css">
+    <link rel="stylesheet" href="../_assets/css/jqm-demos.css">
+    <script src="../js/jquery.js"></script>
+    <script src="../js/jquery.mobile-1.4.4.min.js"></script> 
+    <style type="text/css" media="all">
+	    #header {
+        color: #FCFCFC;
+        border: 0px solid;
+		font-size:18;
+		text-align:center;
+		background-color: #15A230;
+	   }
+	</style>
+    
+</head>
+<body>
+<div data-role="page" class="jqm-demos ui-responsive-panel" id="panel-responsive-page1" data-title="功过格">
+	
+   <div data-role="header"  id="header" data-position="fixed">
+        
+        <h1>注册</h1>
+        <a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
+        <a href="../default.html" data-iconpos="notext" data-icon="home">首页</a>
+    </div><!-- /header --> 
+    
+    <div data-role="panel" data-display="push" data-theme="b" id="nav-panel">
+
+		<ul data-role="listview">
+            <li data-icon="delete"><a href="#" data-rel="close">关闭</a></li>
+                <li><a href="../New/SelectSeed.html" data-ajax="false">我要记录</a></li>
+                <li><a href="../New/TodaySeed.html" data-ajax="false">今天记录</a></li>
+                <li><a href="../New/Best.html" data-ajax="false">今天最好</a></li>
+                <li><a href="../New/NoFinish.html" data-ajax="false">今天完成</a></li>
+                <li><a href="../Team/team.html" data-ajax="false">团队记录</a></li>
+                <li><a href="../Upload/seedup.html" data-ajax="false">上传种子</a></li>
+                <li><a href="../New/HistoryList.html" data-ajax="false">历史记录</a></li>
+                <li><a href="../Order/order.html" data-ajax="false">全球排名</a></li>
+                <li><a href="../Download/seeddown.html" data-ajax="false">记录下载</a></li>
+                <li><a href="../Notice/notice.html" data-ajax="false">通知公告</a></li>
+                <li><a href="#panel-responsive-page2" data-ajax="false">系统设置</a></li> 
+		</ul>
+
+	</div><!-- /panel -->
+ <!-- jQuery -->
+	<script type="text/javascript" src="js/pop-ico.js"></script>
+
+
+
+    <div role="main"  class="ui-content jqm-content jqm-fullwidth">
+		<div data-role="content" data-theme="d">
+			<form action="#" method="post" id="regForm">
+			<center>
+	<!-- 头像选择 start -->
+	<div style="position: relative">
+			<a class="show-ico-btn" title="选择头像"><img
+					class="focus-ico"
+					src="images/head/8.jpeg"
+					alt="选择头像" width="180" height="180">
+			</a><br><center>点击选择头像</center>
+			<div style="display:none">
+			<input type="text"  name="headico" id="headico" value="">
+			</div>
+			
+			
+			<!-- 弹出窗口  start-->
+			<div class="pop-ico" style="display: none">
+				<div class="ico-title">
+					<span>选择头像</span>
+					<a title="关闭窗口" class="hide-ico-btn">x</a>
+				</div>
+				<div class="ico-list">
+					<a data-src="images/head/1.jpeg" class="cur"><img src="images/head/1.jpeg" width="180" height="180"></a>
+					<a data-src="images/head/2.jpeg"><img src="images/head/2.jpeg" width="180" height="180"></a>
+					<a data-src="images/head/3.jpeg"><img src="images/head/3.jpeg" width="180" height="180"></a>
+					<a data-src="images/head/4.jpeg"><img src="images/head/4.jpeg" width="180" height="180"></a>
+					<a data-src="images/head/5.jpeg"><img src="images/head/5.jpeg" width="180" height="180"></a>
+					<a data-src="images/head/6.jpeg"><img src="images/head/6.jpeg" width="180" height="180"></a>
+					<a data-src="images/head/7.jpeg"><img src="images/head/7.jpeg" width="180" height="180"></a>
+					<a data-src="images/head/8.jpeg"><img src="images/head/8.jpeg" width="180" height="180"></a>
+					<a data-src="images/head/9.jpeg"><img src="images/head/9.jpeg" width="180" height="180"></a>
+				</div>
+			</div>
+			<!-- 弹出窗口  end-->
+	</div>
+	<!-- 头像选择 end -->
+	</center>
+			 
+				<div>用户名：
+					    <input type="text" name="username" id="username" placeholder="用户名" /> 登录名：<br>
+					    <input type="text" name="loginname" id="loginname" placeholder="登录名" /> 密码：<br>
+						<input type="text" name="password1" id="password1" placeholder="密码" />确认密码：<br>
+						<input type="text" name="password2" id="password2" value=""placeholder=" 确认密码" />手机号码：<br>
+						<input type="text" name="mobile" id="mobile" placeholder="手机号码" />选择团队：<br>
+						<select  name="team" id="team" placeholder="选择团队"></select>国家/地区：<br>
+						<input type="text" name="extension" id="extension" placeholder="国家/地区" />
+  
+				</div>
+				<br><center>
+				<a href="../default.html" data-role="button" data-inline="true" data-theme="c">取消</a>
+				<a href="#" id="saveuser" data-role="button" data-inline="true" data-theme="b">注册</a></center>
+			</form>
+	</div><!-- /content -->
+
+	
+
+ <script language="javascript">
+	 $(function(){
+	 //获取团队
+	  $.ajax({url:"http://182.254.215.143/App/TeamList.aspx",async:false,
+		  dataType: "json",
+		  success: function(data){
+		   $.each(data['ds'], function(i, n){	
+			
+				//存储到本地数据库
+			   	 var db = openDatabase('gBookdb', '1.0', 'gbook DB', 5 * 1024 * 1024);
+				   	 db.transaction(function (context) {
+			         context.executeSql('CREATE TABLE IF NOT EXISTS team (id INTEGER PRIMARY KEY,  groupid text,groupname text,ishave INTEGER)');
+			           context.executeSql("select * from team where groupid='"+n.GroupID+"';", [], function (context, results) {
+				        var len = results.rows.length, i;
+				        if(len>0){
+					      context.executeSql('update team (groupid,groupname) values("'+n.GroupID+'", "'+n.G_CName+'" )');
+					    }else{
+					      context.executeSql('INSERT INTO team (groupid,groupname)  VALUES ("'+n.GroupID+'", "'+n.G_CName+'" )');
+					    }
+				         });
+		         }); 
+		        
+		         
+			   	//存储结束
+		   	}); //循环结束
+		      },
+		     error: function(){
+		      alert("请连接网络！");
+		     }       
+		  
+		  });
+		//获取团队结束
+	    var db = openDatabase('gBookdb', '1.0', 'gbook DB', 5 * 1024 * 1024);
+	    db.transaction(function (context) {
+           context.executeSql('SELECT * FROM team', [], function (context, results) {
+            var len = results.rows.length, i;
+               for (i = 0; i < len; i++){  
+					var name=results.rows.item(i).groupname; 
+					var id=results.rows.item(i).groupid;
+					var select=document.getElementById("team");  
+					option = new Option(name,id);   
+					select.options.add(option);      
+            }
+         });
+        });
+        
+       
+	
+	   $("#saveuser").click(function(){
+	       var username =$("#username").val();
+	       var loginname =$("#loginname").val();
+	       var password =$("#password1").val();
+	       var password2 =$("#password2").val();
+	       var mobile =$("#mobile").val();
+	       var extension =$("#extension").val();
+		   var headico =$("#headico").val();
+		   var teamname =$("#team").val();
+            //验证注册结果
+		    $.ajax({
+		        type: "POST",
+		        url: "http://182.254.215.143/App/regUser.aspx?txtU_CName="+username+"&txtU_LoginName="+loginname+"&txtU_Password="+password+"&txtU_MobileNo="+mobile+"&txtU_Extension="+extension+"&txtU_PhotoUrl="+headico+"&teamid="+teamname+"",
+		            success: function(data) {
+			             if (data=="SameUser") {
+	 						alert("错误，存在相同的用户名！");
+						}
+						 if (data=="Error") {
+	 						alert("注册失败！");
+						}
+						 if (data=="OK") {
+	 						alert("注册成功,请登录！");
+						}
+						if (data=="Empty") {
+							alert("请输入用户名密码！");
+						}
+		            },
+		             error: function(){
+					     alert("注册失败！");
+					   } 
+		    });  
+		    //上传结束  
+	    	 $.mobile.changePage("login.html","slidedown", true, true);
+		
+		})
+	
+		});
+	</script>
+</div><!-- /page -->
+ 
+</body>
+</html>

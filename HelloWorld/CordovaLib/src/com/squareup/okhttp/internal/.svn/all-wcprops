@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/com/squareup/okhttp/internal
+END
+AbstractOutputStream.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/com/squareup/okhttp/internal/AbstractOutputStream.java
+END
+DiskLruCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/com/squareup/okhttp/internal/DiskLruCache.java
+END
+StrictLineReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/com/squareup/okhttp/internal/StrictLineReader.java
+END
+Base64.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/com/squareup/okhttp/internal/Base64.java
+END
+Dns.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/com/squareup/okhttp/internal/Dns.java
+END
+Platform.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/com/squareup/okhttp/internal/Platform.java
+END
+NamedRunnable.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/com/squareup/okhttp/internal/NamedRunnable.java
+END
+FaultRecoveringOutputStream.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/com/squareup/okhttp/internal/FaultRecoveringOutputStream.java
+END
+Util.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/com/squareup/okhttp/internal/Util.java
+END

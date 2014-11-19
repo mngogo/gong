@@ -1,0 +1,173 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/org/apache/cordova
+END
+DirectoryManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/org/apache/cordova/DirectoryManager.java
+END
+CordovaResourceApi.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/org/apache/cordova/CordovaResourceApi.java
+END
+NativeToJsMessageQueue.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/org/apache/cordova/NativeToJsMessageQueue.java
+END
+ScrollEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/org/apache/cordova/ScrollEvent.java
+END
+CallbackContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/org/apache/cordova/CallbackContext.java
+END
+Config.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/org/apache/cordova/Config.java
+END
+CordovaArgs.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/org/apache/cordova/CordovaArgs.java
+END
+CordovaActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/org/apache/cordova/CordovaActivity.java
+END
+CordovaPlugin.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/org/apache/cordova/CordovaPlugin.java
+END
+Whitelist.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/org/apache/cordova/Whitelist.java
+END
+CordovaUriHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/org/apache/cordova/CordovaUriHelper.java
+END
+CordovaInterface.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/org/apache/cordova/CordovaInterface.java
+END
+IceCreamCordovaWebViewClient.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/org/apache/cordova/IceCreamCordovaWebViewClient.java
+END
+LinearLayoutSoftKeyboardDetect.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/org/apache/cordova/LinearLayoutSoftKeyboardDetect.java
+END
+FileHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/org/apache/cordova/FileHelper.java
+END
+AuthenticationToken.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/org/apache/cordova/AuthenticationToken.java
+END
+App.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/org/apache/cordova/App.java
+END
+PluginEntry.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/org/apache/cordova/PluginEntry.java
+END
+LOG.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/org/apache/cordova/LOG.java
+END
+CordovaWebViewClient.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/org/apache/cordova/CordovaWebViewClient.java
+END
+CordovaWebView.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/org/apache/cordova/CordovaWebView.java
+END
+DroidGap.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/org/apache/cordova/DroidGap.java
+END
+PluginManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/org/apache/cordova/PluginManager.java
+END
+CordovaChromeClient.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/org/apache/cordova/CordovaChromeClient.java
+END
+JSONUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/org/apache/cordova/JSONUtils.java
+END
+ExifHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/org/apache/cordova/ExifHelper.java
+END
+PluginResult.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/org/apache/cordova/PluginResult.java
+END
+ExposedJsApi.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/src/org/apache/cordova/ExposedJsApi.java
+END

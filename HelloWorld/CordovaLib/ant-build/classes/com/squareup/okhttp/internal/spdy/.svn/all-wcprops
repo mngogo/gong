@@ -1,0 +1,215 @@
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy
+END
+NameValueBlockReader.class
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/NameValueBlockReader.class
+END
+FrameReader.class
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/FrameReader.class
+END
+Hpack$Reader.class
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/Hpack$Reader.class
+END
+SpdyStream$SpdyDataInputStream.class
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/SpdyStream$SpdyDataInputStream.class
+END
+Hpack$HeaderEntry.class
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/Hpack$HeaderEntry.class
+END
+SpdyConnection$Reader.class
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/SpdyConnection$Reader.class
+END
+FrameWriter.class
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/FrameWriter.class
+END
+Hpack$Writer.class
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/Hpack$Writer.class
+END
+NameValueBlockReader$FillableInflaterInputStream.class
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/NameValueBlockReader$FillableInflaterInputStream.class
+END
+SpdyStream.class
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/SpdyStream.class
+END
+SpdyConnection.class
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/SpdyConnection.class
+END
+Http20Draft06$Reader.class
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/Http20Draft06$Reader.class
+END
+Settings.class
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/Settings.class
+END
+NameValueBlockReader$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/NameValueBlockReader$1.class
+END
+NameValueBlockReader$2.class
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/NameValueBlockReader$2.class
+END
+Spdy3.class
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/Spdy3.class
+END
+Http20Draft06$Writer.class
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/Http20Draft06$Writer.class
+END
+SpdyConnection$Reader$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/SpdyConnection$Reader$1.class
+END
+IncomingStreamHandler.class
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/IncomingStreamHandler.class
+END
+FrameReader$Handler.class
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/FrameReader$Handler.class
+END
+SpdyStream$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/SpdyStream$1.class
+END
+HeadersMode.class
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/HeadersMode.class
+END
+SpdyConnection$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/SpdyConnection$1.class
+END
+ErrorCode.class
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/ErrorCode.class
+END
+SpdyConnection$2.class
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/SpdyConnection$2.class
+END
+SpdyConnection$3.class
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/SpdyConnection$3.class
+END
+Hpack.class
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/Hpack.class
+END
+SpdyStream$SpdyDataOutputStream.class
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/SpdyStream$SpdyDataOutputStream.class
+END
+Spdy3$Reader.class
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/Spdy3$Reader.class
+END
+Ping.class
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/Ping.class
+END
+IncomingStreamHandler$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/IncomingStreamHandler$1.class
+END
+Spdy3$Writer.class
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/Spdy3$Writer.class
+END
+Variant.class
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/Variant.class
+END
+Http20Draft06.class
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/Http20Draft06.class
+END
+SpdyConnection$Builder.class
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/internal/spdy/SpdyConnection$Builder.class
+END

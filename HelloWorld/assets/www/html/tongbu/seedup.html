@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>功过格</title>
+    <link rel="stylesheet" href="../../css/themes/default/jquery.mobile-1.4.4.min.css">
+    <link rel="stylesheet" href="../../_assets/css/jqm-demos.css">
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8"/>
+    <link rel="stylesheet" href="../../css/mui.min.css">
+    <script src="../../js/jquery.js"></script>
+    <script src="../../js/jquery.mobile-1.4.4.min.js"></script>  
+  	<script type="text/javascript" charset="utf-8" src="../../cordova.js"></script>  
+  	<script type="text/javascript" src="../../js/common.js"></script>
+    <script src="../../js/mui.min.js"></script>
+    <script src="../../js/app.js"></script>
+</head>
+<body>
+<div data-role="page" class="jqm-demos ui-responsive-panel"  data-title="功过格">
+ 
+    <header>
+			<div class="nvbt iback" onclick="back(true);"></div>
+			<div class="nvtt">上传记录</div>
+		</header>
+     <br>
+    <div role="main"  class="ui-content jqm-content jqm-fullwidth">
+    <br><br><br><br>
+    <center><div id="savename"style="display:block"><img src="../../img/up.jpg"/></div></center><br>
+    <center><div id="success" style="display:none"><img src="../../img/upload.jpg"/></div></center><br>
+    <center><div id="result"></div></center>
+   <br><center>
+	  <a href="#" id="seedsup" data-icon="arrow-u" data-role="button" data-inline="true" data-theme="e">上传种子记录</a></center>
+	</div><!-- /content 	-->
+
+
+ <script language="javascript">
+     var Adderid="none";
+     var teamname="none";
+ 
+     $(function(){ 
+     
+	  $("#seedsup").click(function(){
+	   //准备上传数据
+	 	 var str="none";
+		 var db = openDatabase('gBookdb', '1.0', 'gbook DB', 5 * 1024 * 1024);
+			 db.transaction(function (context) {
+			 //获取用户 
+	         context.executeSql('SELECT * FROM user', [], function (context, results) {
+	            var len = results.rows.length;
+				if(len==0)
+				{
+				alert("请先登录再进行同步！");
+				$.mobile.changePage("../Login/default.html","slidedown", true, true);
+				}else {
+		         Adderid=results.rows.item(0).name;
+		         teamname=results.rows.item(0).teamname;
+	  
+			   		//准备上传数据
+			    	var db = openDatabase('gBookdb', '1.0', 'gbook DB', 5 * 1024 * 1024);
+						db.transaction(function (context) {
+				            context.executeSql('SELECT * FROM seed where ifup = 0', [], function (context, results) {
+					            var len = results.rows.length, i;
+					               if(len==0)
+					               {
+					               document.getElementById('result').innerHTML = '没有记录或记录已上传！';
+					               }else{
+						               var jsonarray=[];
+						               for (i = 0; i < len; i++){ 
+						                   var ID=results.rows.item(i).id;
+									       var seedtype=results.rows.item(i).seedtype;
+									       var goodseed =results.rows.item(i).goodseed;
+										   var wrongseed =results.rows.item(i).wrongseed;
+										   var wantseed =results.rows.item(i).wantseed;
+										   var IfSee=results.rows.item(i).IfSee;  
+										   var IfFinish=results.rows.item(i).IfFinish;
+										   var addYear = results.rows.item(i).addYear;
+										   var addMonth =results.rows.item(i).addMonth; 
+										   var addDay =results.rows.item(i).AddDay; 
+										   var addHour =results.rows.item(i).addHour; 
+										   var minute=results.rows.item(i).addMinute;
+										   var uuid=results.rows.item(i).uuid;
+										   var addTime=results.rows.item(i).addTime;
+										    //验证上传结果
+									        $.ajax({
+									        type: "POST",
+									        url: "http://182.254.242.217:801/App/SeedUp1.aspx?seedType="+seedtype+"&goodSeed="+goodseed+"&wrongSeed="+wrongseed+"&wantSeed="+wantseed+"&IfSee="+IfSee+"&IfFinish="+IfFinish+"&addYear="+addYear+"&addMonth="+addMonth+"&addDay="+addDay+"&addHour="+addHour+"&addMinute="+minute+"&addTime="+addTime+"&Adderid="+Adderid+"&teamid="+teamname+"&uuid="+uuid+"",
+									            success: function(data) {
+										             document.getElementById("success").style.display='block';
+										             document.getElementById("savename").style.display='none';
+										             document.getElementById('result').innerHTML = '种子记录上传成功！';
+										              var sql='UPDATE seed set ifup=1';
+												       var db = openDatabase('gBookdb', '1.0', 'gbook DB', 5 * 1024 * 1024);
+												       db.transaction(function (context) {
+												           context.executeSql(sql);  
+												       }); 
+									            },
+									             error: function(){
+												       document.getElementById('result').innerHTML = '温馨提示:上传之前请确认已连接网络！！';
+												   } 
+									       });  
+									     
+			    					   }//循环遍历记录上传结束
+					               }
+					         });
+			       		 }); 
+		               //上传结束  
+		               
+					}
+					
+		        });
+		         //获取结束
+			   });
+	  
+		 }); 
+	 
+	}); 
+	</script>
+	
+</div> 
+
+</body>
+</html>
+

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>功过格</title>
+    <link rel="stylesheet" href="css/themes/default/jquery.mobile-1.4.4.min.css">
+    <link rel="stylesheet" href="_assets/css/jqm-demos.css">
+    <script src="js/jquery.js"></script>
+    <script src="_assets/js/index.js"></script>
+    <script src="js/jquery.mobile-1.4.4.min.js"></script>
+	<script>
+	     function showLoading(){
+			$.mobile.loadingMessageTextVisible = true;
+			$.mobile.showPageLoadingMsg("a", "加载中..." );
+		} 
+	</script> 
+	
+	<script type="text/javascript" charset="utf-8">
+ 
+     $(function () { 
+        var db = openDatabase('gBookdb', '1.0', 'gbook DB', 5 * 1024 * 1024);
+        var msg;
+        
+       
+        db.transaction(function (context) {
+               context.executeSql('CREATE TABLE IF NOT EXISTS seedType (id INTEGER PRIMARY KEY,  seedname text,seedimg text)');
+               context.executeSql('CREATE TABLE IF NOT EXISTS seed (id INTEGER PRIMARY KEY, seedtype text, goodseed text,wrongseed text,wantseed text,addYear text,addMonth text,AddDay text,addHour text,addMinute text,IfSee text,IfFinish text,addTime text,ifup INTEGER)');
+               context.executeSql('CREATE TABLE IF NOT EXISTS user (id INTEGER PRIMARY KEY, name text, password text, teamname text)');  
+  
+         }); 
+        db.transaction(function (context) {
+           context.executeSql('SELECT * FROM seedType where id!=1', [], function (context, results) {
+            var len = results.rows.length, i;
+               if(len==0)
+               {
+                context.executeSql('INSERT INTO seedType ( seedname,seedimg) VALUES ( "最好","0.png")');
+                context.executeSql('INSERT INTO seedType ( seedname,seedimg) VALUES ( "财富","1.png")');
+                context.executeSql('INSERT INTO seedType ( seedname,seedimg) VALUES ( "健康","2.png")');
+                context.executeSql('INSERT INTO seedType ( seedname,seedimg) VALUES ( "智慧","3.png")');
+                context.executeSql('INSERT INTO seedType ( seedname,seedimg) VALUES ( "和谐","4.png")');
+               }
+               
+               for (i = 0; i < len; i++){  
+               var content = ' <li><a href="'+"new.html?ID="+results.rows.item(i).id+'" data-transition="slidefade"><img src="'+"img/"+results.rows.item(i).seedimg+'"><h2>'+results.rows.item(i).seedname+'</h2><p>'+results.rows.item(i).seedname+'</p></a> </li>';
+               $("#seedtypelist").append(content).listview('refresh');
+            }
+         });
+        }); 
+ 
+  });
+ 
+</script>
+</head>
+<body>
+<div data-role="page" class="jqm-demos ui-responsive-panel" id="panel-responsive-page1" data-title="功过格">
+
+    <div data-role="header" data-position="fixed">
+        <h1>功过格</h1>
+        <script>
+			function change(){
+			 	var db = openDatabase('gBookdb', '1.0', 'gbook DB', 5 * 1024 * 1024);
+						db.transaction(function (context) {
+				            context.executeSql('SELECT * FROM user', [], function (context, results) {
+					            var len = results.rows.length, i;
+					               if(len==0)
+					               {
+					               alert("请先登录");
+					                var u = document.getElementById('c');
+		                           u.href = '#add-form';
+					               }else{
+					               var u = document.getElementById('c');
+		                           u.href = '#add-form2';
+		                           window.location.href="#add-form2"; 
+							       var name =results.rows.item(1).name;
+							       document.getElementById('usename').innerText =name;
+					               }
+					         });
+			       		 }); 
+			 
+		}	
+	</script>
+        <a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
+        <!-- <a href="#add-form"  id="c" data-icon="gear" data-iconpos="notext">Add</a> -->
+        <a href="Login/userinfo.html"  id="c" data-icon="info" data-iconpos="notext"></a>
+    </div><!-- /header -->
+    
+    <div role="main" class="ui-content jqm-content jqm-fullwidth"> 
+    	
+
+ 	<div class="ui-grid-b">
+        <div class="ui-block-a"><a href="Login/login.html"  data-transition="slide" data-ajax="false" class="ui-shadow ui-btn ui-corner-all"> <img src="img/11.png"/><br><br><br><font size=1>注册登录 </font> </a></div>
+         <div class="ui-block-b"> <a href="Upload/seedup.html" data-transition="slide" data-ajax="false" class="ui-shadow ui-btn ui-corner-all"> <img src="img/7.png"/><br><br><br><font size=1>上传种子</font></a></div>
+ <div class="ui-block-c"> <a href="Download/seeddown.html"  data-transition="slide" data-ajax="false" class="ui-shadow ui-btn ui-corner-all"><img src="img/10.png"/><br><br><br><font size=1>记录下载  </font> </a></div>
+       </div>
+	</div><!-- /content -->
+
+	<div data-role="panel" data-display="push" data-theme="b" id="nav-panel">
+
+		<ul data-role="listview">
+            <li data-icon="delete"><a href="#" data-rel="close">关闭</a></li>
+                <li><a href="New/SelectSeed.html" data-ajax="false">我要记录</a></li>
+                <li><a href="New/TodaySeed.html" data-ajax="false">今天记录</a></li>
+                <li><a href="New/Best.html" data-ajax="false">今天最好</a></li>
+                <li><a href="New/NoFinish.html" data-ajax="false">今天完成</a></li>
+                <li><a href="Team/team.html" data-ajax="false">团队记录</a></li>
+                <li><a href="Upload/seedup.html" data-ajax="false">上传种子</a></li>
+                <li><a href="New/HistoryList.html" data-ajax="false">历史记录</a></li>
+                <li><a href="Order/order.html" data-ajax="false">全球排名</a></li>
+                <li><a href="Download/seeddown.html" data-ajax="false">记录下载</a></li>
+                <li><a href="Notice/notice.html" data-ajax="false">通知公告</a></li>
+                <li><a href="#panel-responsive-page2" data-ajax="false">种子类型更新</a></li> 
+		</ul>
+
+	</div><!-- /panel -->
+
+	<div data-role="panel" data-position="right" data-display="reveal" data-theme="a" id="add-form">
+	        <form class="userform">
+	        
+	        <script type="text/javascript">
+				function redirect(){
+				    var name = $("#name").val();
+				    var password = $("#password").val();
+					//验证登录	    
+					$.ajax({url:"http://192.168.1.103:801/App/chkUser.aspx?username="+name+"&password="+password+"",async:false,
+					  success: function(){
+					     alert("账户验证成功！");
+					     //把用户存储到本地数据库
+					   	 var db = openDatabase('gBookdb', '1.0', 'gbook DB', 5 * 1024 * 1024);
+					   	 db.transaction(function (context) {
+				         context.executeSql('CREATE TABLE IF NOT EXISTS user (id INTEGER PRIMARY KEY, name text, password text)');
+				         }); 
+				         db.transaction(function (context) {
+						   var sql='INSERT INTO user (name,password)  VALUES ("'+name+'", "'+password+'" )';
+						    context.executeSql(sql);  
+			             });
+					   	//存储结束
+					   },
+					    error: function(){
+					    alert("验证失败！");
+					   }       
+					  });
+					//验证结束	    
+				}
+			</script>
+
+        	<h2>登录</h2>
+
+            <label for="name">用户名:</label>
+            <input type="text" name="name" id="name" value="" data-clear-btn="true" data-mini="true">
+            <label for="password">密码:</label>
+            <input type="text" name="password" id="password" value="" data-clear-btn="true" autocomplete="off" data-mini="true">
+            <div class="ui-grid-a">
+                <div class="ui-block-a"><a href="default.html" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-mini">取消</a></div>
+                <div class="ui-block-b"><a href="javascript:redirect();" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-mini">登录</a></div>
+			</div>
+			<br/>
+					未建立帐号？ <a href="Login/register.html">点击注册</a>
+        </form>
+
+	</div><!-- /panel -->
+	
+	
+	<div data-role="panel" data-position="right" data-display="reveal" data-theme="a" id="add-form2">
+	<form class="userform">
+			
+			<script  type="text/javascript">
+			function deleteUser(){
+			        var db = openDatabase('gBookdb', '1.0', 'gbook DB', 5 * 1024 * 1024);
+					db.transaction(function (context) {
+					var sql='DROP TABLE user';
+			        context.executeSql(sql);  
+			        alert("已退出！");
+					}); 
+				}
+			</script>
+
+        	<h2>欢迎使用</h2>
+
+            <label for="usename">用户名:</label>
+            <div id="usename"></div>
+
+            <div class="ui-grid-a">
+                <div class="ui-block-b"><a href="javascript:deleteUser();" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-mini">退出</a></div>
+			</div>
+        </form>
+	</div>
+	
+
+ <div data-role="footer" data-theme="a" data-position="fixed">
+    <div data-role="navbar">
+      <ul>
+        <li><a href="default.html" data-icon="home" data-theme="c" data-transition="none">主页</a></li>
+        <li><a href="things.html"  data-icon="star"  data-theme="c" data-transition="none">动态</a></li>
+        <li><a href="set.html" data-icon="gear"  data-theme="c" data-transition="none">设置</a></li>
+      </ul>
+    </div>   
+  </div>
+
+</body>
+</html>

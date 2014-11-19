@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+		<meta name="HandheldFriendly" content="true"/>
+		<meta name="MobileOptimized" content="320"/>
+		<title>Hello H5+</title>
+		<script type="text/javascript" src="../../../js/common.js"></script>
+		<link rel="stylesheet" href="../../../css/themes/default/jquery.mobile-1.4.4.min.css">
+	    <script src="../../../js/jquery.js"></script>
+	    <script src="../../../js/jquery.mobile-1.4.4.min.js"></script>
+		<style>
+			html,body {
+				background-color: #efeff4;
+			}
+			h5 {
+				margin: 5px 7px;
+			}
+		</style>
+	    <script type="text/javascript">
+		window.onload = function() { 
+		    var id= window.localStorage.getItem("countid");
+			 //创建数据库
+			var db = openDatabase("gBookdb", "1.0", "gbook DB", 1 *1024 * 1024);  
+		     // 查询
+			db.transaction( function(tx) { 
+			    tx.executeSql(
+			        "SELECT * FROM count WHERE id="+id, [],  
+			         function(tx, result) {
+			            var rows = result.rows, length = rows.length, i=0;
+			            document.getElementById("type").value=rows.item(0)['type'];	
+			            document.getElementById("begin").value=rows.item(0)['begin'];	
+			            document.getElementById("end").value=rows.item(0)['end'];	
+			            document.getElementById("begintime").value=rows.item(0)['begintime'];	
+			            document.getElementById("endtime").value=rows.item(0)['endtime'];	
+			        }, 
+			        function(tx, error){
+			            //alert('Select Failed: ' + error.message);
+			        }
+			    ); 
+			}); 
+			 
+			 
+		}
+		
+		
+		//保存数据
+        function save(){
+        	var id= window.localStorage.getItem("countid");
+        	var db = openDatabase("gBookdb", "1.0", "gbook DB", 1 *1024 * 1024); 
+        	var type = document.getElementById("type").value;
+        	var begin = document.getElementById("begin").value;
+        	var end = document.getElementById("end").value;
+        	var begintime = document.getElementById("begintime").value;
+        	var endtime = document.getElementById("endtime").value;
+        	//表单验证
+			if (type== ''||begin== ''||end== ''||begintime== ''||endtime== ''){
+				 mui.toast('类型为空！');
+			}
+			else{
+			var sql='update count set  type="'+type+'" ,begin="'+begin+'",end="'+end+'",begintime="'+begintime+'",endtime="'+endtime+'" where id="'+id+'"';
+			db.transaction(function(tx) { 
+			    tx.executeSql(sql); 
+			    mui.toast('修改成功');
+			     $.mobile.changePage("Alert.html","slidedown", true, true);
+			}); 
+			} 
+			
+			
+			}
+			
+		</script>
+		<link rel="stylesheet" href="../../../css/common.css" type="text/css" charset="utf-8"/>
+		<link rel="stylesheet" href="../../../css/mui.min.css">
+		<script src="../../../js/mui.min.js"></script>
+		<script src="../../../js/app.js"></script>
+		<link href="../../../css/mobiscroll.custom-2.13.2.min.css" rel="stylesheet" type="text/css" />
+        <script src="../../../js/mobiscroll.custom-2.13.2.min.js" type="text/javascript"></script>
+		<script>
+	  $(function(){
+        $("#begintime").mobiscroll().date(); 
+        $("#endtime").mobiscroll().date();
+      });
+    </script>
+	</head>
+	<body>
+		<header>
+			<div class="nvbt iback" onclick="back(true);"></div>
+			<div class="nvtt">修改计数器</div>
+		</header>
+		
+		 <div role="main"  class="ui-content jqm-content jqm-fullwidth">
+		       <br>
+		     <div class='error' id="error"></div>
+		      <div data-role="fieldcontain">
+		    <input class="mui-input-clear" type="text" name="type" id="type" placeholder="请输入计数器类型">
+	
+		    <input class="mui-input-clear" type="text" name="begin" id="begin" placeholder="请输入起始数量">
+		
+		    <input class="mui-input-clear" type="text" name="end" id="end" placeholder="请输入目标数量">
+	
+		 <input class="mui-input-clear" type="text" name="begintime" id="begintime" placeholder="请输入起始时间">
+		
+		 <input class="mui-input-clear" type="text" name="endtime" id="endtime" placeholder="请输入终止时间">
+		  <button onclick="save()" class="ui-btn ui-corner-all">提交</button>
+		 </div>
+	</div><!-- /content -->
+	
+		
+	</body>
+</html>

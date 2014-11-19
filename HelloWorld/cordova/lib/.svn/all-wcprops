@@ -1,0 +1,143 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/winway1234/!svn/ver/2/trunk/cordova/lib
+END
+run.js
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/winway1234/!svn/ver/2/trunk/cordova/lib/run.js
+END
+check_reqs.js
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/winway1234/!svn/ver/2/trunk/cordova/lib/check_reqs.js
+END
+start-emulator
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/winway1234/!svn/ver/2/trunk/cordova/lib/start-emulator
+END
+list-started-emulators
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/winway1234/!svn/ver/2/trunk/cordova/lib/list-started-emulators
+END
+start-emulator.bat
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/winway1234/!svn/ver/2/trunk/cordova/lib/start-emulator.bat
+END
+list-devices
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/winway1234/!svn/ver/2/trunk/cordova/lib/list-devices
+END
+install-emulator
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/winway1234/!svn/ver/2/trunk/cordova/lib/install-emulator
+END
+log.js
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/winway1234/!svn/ver/2/trunk/cordova/lib/log.js
+END
+clean.js
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/winway1234/!svn/ver/2/trunk/cordova/lib/clean.js
+END
+list-started-emulators.bat
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/winway1234/!svn/ver/2/trunk/cordova/lib/list-started-emulators.bat
+END
+exec.js
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/winway1234/!svn/ver/2/trunk/cordova/lib/exec.js
+END
+list-devices.bat
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/winway1234/!svn/ver/2/trunk/cordova/lib/list-devices.bat
+END
+install-emulator.bat
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/winway1234/!svn/ver/2/trunk/cordova/lib/install-emulator.bat
+END
+android_sdk_version.js
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/winway1234/!svn/ver/2/trunk/cordova/lib/android_sdk_version.js
+END
+install-device
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/winway1234/!svn/ver/2/trunk/cordova/lib/install-device
+END
+emulator.js
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/winway1234/!svn/ver/2/trunk/cordova/lib/emulator.js
+END
+spawn.js
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/winway1234/!svn/ver/2/trunk/cordova/lib/spawn.js
+END
+list-emulator-images
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/winway1234/!svn/ver/2/trunk/cordova/lib/list-emulator-images
+END
+appinfo.js
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/winway1234/!svn/ver/2/trunk/cordova/lib/appinfo.js
+END
+install-device.bat
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/winway1234/!svn/ver/2/trunk/cordova/lib/install-device.bat
+END
+list-emulator-images.bat
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/winway1234/!svn/ver/2/trunk/cordova/lib/list-emulator-images.bat
+END
+device.js
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/winway1234/!svn/ver/2/trunk/cordova/lib/device.js
+END
+build.js
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/winway1234/!svn/ver/2/trunk/cordova/lib/build.js
+END

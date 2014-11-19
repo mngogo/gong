@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+		<meta name="HandheldFriendly" content="true"/>
+		<meta name="MobileOptimized" content="320"/>
+		<title>Hello H5+</title>
+		<link rel="stylesheet" href="../css/themes/default/jquery.mobile-1.4.4.min.css">
+	    <script src="../js/jquery.js"></script>
+	    <script src="../js/jquery.mobile-1.4.4.min.js"></script> 
+		<script type="text/javascript" src="../js/common.js"></script>
+		
+		<style>
+			html,body {
+				background-color: #efeff4;
+			}
+			h5 {
+				margin: 5px 7px;
+			}
+		</style>
+	    <script type="text/javascript">
+		
+		
+		window.onload = function() { 
+		    //创建数据库
+			var db = openDatabase("gBookdb", "1.0", "gbook DB", 1 *1024 * 1024); 
+			// 创建表
+			db.transaction( function(tx) { 
+			    tx.executeSql(
+			        'CREATE TABLE IF NOT EXISTS seed (id INTEGER PRIMARY KEY, seedtype text, goodseed text,wrongseed text,wantseed text,addYear text,addMonth text,AddDay text,addHour text,addMinute text,IfSee text,IfFinish text,addTime text,ifup INTEGER,uuid INTEGER)', 
+			         [], 
+			        function(){ }, 
+			        function(tx, error){}
+			    );
+			}); 
+		}; 
+		
+		
+		//获取当前时间
+		function getNowFormatDate(){
+			var day = new Date();
+			var Year = 0;
+			var Month = 0;
+			var Day = 0;
+			var CurrentDate = "";
+			//初始化时间
+			Year= day.getFullYear();//ie火狐下都可以
+			Month= day.getMonth()+1;
+			Day = day.getDate();
+			CurrentDate += Year + "-";
+			if (Month >= 10 )
+			{
+			CurrentDate += Month + "-";
+			}
+			else
+			{
+			CurrentDate += "0" + Month + "-";
+			}
+			if (Day >= 10 )
+			{
+			CurrentDate += Day ;
+			}
+			else
+			{
+			CurrentDate += "0" + Day ;
+			}
+			return CurrentDate;
+		} 	
+		
+        
+        //保存数据
+        function save(){
+        	var db = openDatabase("gBookdb", "1.0", "gbook DB", 1 *1024 * 1024); 
+            // 用于下载的种子记录标识
+            var S4 = function () {
+		    return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
+		    };
+		    var uuid=S4() + S4() + "-" + S4() + "-" + S4() + "-" + S4() + "-" + S4() + S4() + S4();
+		    //获取表单数据
+		    
+			var goodseed = document.getElementById("goodseed").value;
+			var wrongseed = document.getElementById("wrongseed").value;
+			var wantseed = document.getElementById("wantseed").value;
+			var IfSee = document.getElementById("IfSee").value;
+			var addTime = getNowFormatDate();
+			var myDate = new Date();
+			var addYear = myDate.getFullYear();
+		    var addMonth =myDate.getMonth()+1; 
+		    var AddDay =myDate.getDate(); 
+		    var addHour = myDate.getHours(); 
+		    var minute=myDate.getMinutes(); 
+			//表单验证
+			if (goodseed== ''||wrongseed== ''||wantseed== ''){
+				 mui.toast('请检查输入内容！');
+			}
+			else{
+			
+			var sql='INSERT INTO seed (seedtype,goodseed,wrongseed,wantseed,addYear,addMonth,AddDay,addHour,addMinute,IfSee,IfFinish,addTime,ifup,uuid)  VALUES ("1", "'+goodseed+'","'+wrongseed+'", "'+wantseed+'", "'+addYear+'","'+addMonth+'","'+AddDay+'","'+addHour+'", "'+minute+'","'+IfSee+'" ,"0" ,"'+addTime+'","0","'+uuid+'" )';
+	        // 插入数据
+			db.transaction(function(tx) { 
+			    tx.executeSql(sql); 
+			     mui.toast('保存成功');
+			    $.mobile.changePage("Alert.html","slidedown", true, true);
+			}); 
+			
+			}
+			 
+        }
+		</script>
+		<link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8"/>
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/app.js"></script>
+	</head>
+	<body>
+		<header>
+			<div class="nvbt iback" onclick="back(true);"></div>
+			<div class="nvtt">今天最好</div>
+		</header>
+		<div id="seedid" style="display: none"></div>
+		<div role="main"  class="ui-content jqm-content jqm-fullwidth">
+		       <br><br>
+		      <div data-role="fieldcontain">
+		    <label for="textarea-1">正面:</label>
+		    <input class="required" type="text" name="goodseed" id="goodseed">
+		 <br>
+		    <label for="textarea-1">负面:</label>
+		    <input class="required" type="text" name="wrongseed" id="wrongseed">
+		<br>
+		 
+		    <label for="textarea-1">我要:</label>
+		    <input class="required" type="text" name="wantseed" id="wantseed">
+		<br>
+		
+		<label for="slider-flip-m">是否公开:</label>
+		<select name="slider-flip-m" id="IfSee" data-role="slider" data-mini="true">
+		    <option value="off">No</option>
+		    <option value="on" selected="">Yes</option>
+		</select>
+		<br>
+		  <button onclick="save()" class="ui-btn ui-corner-all">提交</button>
+		 </div>
+	</div><!-- /content -->
+	
+		
+	</body>
+</html>

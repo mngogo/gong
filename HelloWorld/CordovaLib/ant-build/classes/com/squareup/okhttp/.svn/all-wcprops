@@ -1,0 +1,257 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp
+END
+OkAuthenticator$Challenge.class
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/OkAuthenticator$Challenge.class
+END
+HttpResponseCache$EntryCacheResponse.class
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/HttpResponseCache$EntryCacheResponse.class
+END
+OkResponseCache.class
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/OkResponseCache.class
+END
+Request$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/Request$1.class
+END
+TunnelRequest.class
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/TunnelRequest.class
+END
+HttpResponseCache.class
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/HttpResponseCache.class
+END
+HttpResponseCache$EntrySecureCacheResponse.class
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/HttpResponseCache$EntrySecureCacheResponse.class
+END
+RouteDatabase.class
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/RouteDatabase.class
+END
+Address.class
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/Address.class
+END
+Failure.class
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/Failure.class
+END
+ConnectionPool.class
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/ConnectionPool.class
+END
+HttpResponseCache$CacheRequestImpl$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/HttpResponseCache$CacheRequestImpl$1.class
+END
+Dispatcher$RealResponseBody.class
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/Dispatcher$RealResponseBody.class
+END
+OkHttpClient$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/OkHttpClient$1.class
+END
+Response.class
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/Response.class
+END
+Route.class
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/Route.class
+END
+Request$Body$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/Request$Body$1.class
+END
+Connection.class
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/Connection.class
+END
+Request$Body$2.class
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/Request$Body$2.class
+END
+Request$Builder.class
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/Request$Builder.class
+END
+OkAuthenticator$Credential.class
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/OkAuthenticator$Credential.class
+END
+OkAuthenticator.class
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/OkAuthenticator.class
+END
+HttpResponseCache$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/HttpResponseCache$1.class
+END
+HttpResponseCache$2.class
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/HttpResponseCache$2.class
+END
+HttpResponseCache$3.class
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/HttpResponseCache$3.class
+END
+Job.class
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/Job.class
+END
+Failure$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/Failure$1.class
+END
+ConnectionPool$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/ConnectionPool$1.class
+END
+ConnectionPool$2.class
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/ConnectionPool$2.class
+END
+ResponseSource.class
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/ResponseSource.class
+END
+Response$Body.class
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/Response$Body.class
+END
+MediaType.class
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/MediaType.class
+END
+Response$1.class
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/Response$1.class
+END
+Dispatcher.class
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/Dispatcher.class
+END
+Response$Receiver.class
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/Response$Receiver.class
+END
+Request.class
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/Request.class
+END
+Failure$Builder.class
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/Failure$Builder.class
+END
+HttpResponseCache$CacheRequestImpl.class
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/HttpResponseCache$CacheRequestImpl.class
+END
+OkHttpClient.class
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/OkHttpClient.class
+END
+HttpResponseCache$Entry.class
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/HttpResponseCache$Entry.class
+END
+Response$Builder.class
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/Response$Builder.class
+END
+Request$Body.class
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/winway1234/!svn/ver/2/trunk/CordovaLib/ant-build/classes/com/squareup/okhttp/Request$Body.class
+END

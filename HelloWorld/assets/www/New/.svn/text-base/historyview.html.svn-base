@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>功过格</title>
+    <link rel="stylesheet" href="../css/themes/default/jquery.mobile-1.4.4.min.css">
+    <link rel="stylesheet" href="../_assets/css/jqm-demos.css">
+    <script src="../js/jquery.js"></script>
+    <script src="../_assets/js/index.js"></script> 
+    <script src="../js/jquery.mobile-1.4.4.min.js"></script>  
+     <style type="text/css" media="all">
+	    #header {
+        color: #FCFCFC;
+        border: 0px solid;
+		font-size:18;
+		text-align:center;
+		background-color: #15A230;
+	   }
+	</style>
+</head>
+<body>
+<div data-role="page" class="jqm-demos ui-responsive-panel" id="panel-responsive-page1" data-title="功过格">
+
+    <div data-role="header" id="header" data-position="fixed">
+        <h1>历史记录</h1>
+        <a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
+        <a href="../default.html" data-iconpos="notext" data-icon="home">首页</a>
+    </div><!-- /header -->
+
+    <div role="main"  class="ui-content jqm-content jqm-fullwidth">
+       
+    
+      <div class="ui-field-contain">
+    <label for="textarea-1">正面:</label>
+    <textarea   class="required" disabled="disabled" name="goodseed" id="goodseed"></textarea>
+</div>
+ 
+<div class="ui-field-contain">
+    <label for="textarea-1">负面:</label>
+    <textarea   class="required" disabled="disabled" name="wrongseed" id="wrongseed"></textarea>
+</div>
+
+ 
+<div class="ui-field-contain">
+    <label for="textarea-1">我要:</label>
+    <textarea   class="required" disabled="disabled" name="wantseed"  id="wantseed"></textarea>
+</div> 
+
+
+<label for="slider-flip-m">是否公开:</label>
+<select name="slider-flip-m" id="IfSee" data-role="slider" data-mini="true">
+    <option value="off">No</option>
+    <option value="on" selected="">Yes</option>
+</select>
+  <a href="TodaySeed.html" class="ui-shadow ui-btn ui-corner-all">返回</a>
+	</div><!-- /content -->
+
+	<div data-role="panel" data-display="push" data-theme="b" id="nav-panel">
+
+		<ul data-role="listview">
+            <li data-icon="delete"><a href="#" data-rel="close">关闭</a></li>
+                <li><a href="../New/SelectSeed.html" data-ajax="false">我要记录</a></li>
+                <li><a href="../New/TodaySeed.html" data-ajax="false">今天记录</a></li>
+                <li><a href="../New/Best.html" data-ajax="false">今天最好</a></li>
+                <li><a href="../New/NoFinish.html" data-ajax="false">今天完成</a></li>
+                <li><a href="../Team/team.html" data-ajax="false">团队记录</a></li>
+                <li><a href="../Upload/seedup.html" data-ajax="false">上传种子</a></li>
+                <li><a href="../New/HistoryList.html" data-ajax="false">历史记录</a></li>
+                <li><a href="../Order/order.html" data-ajax="false">全球排名</a></li>
+                <li><a href="../Download/seeddown.html" data-ajax="false">记录下载</a></li>
+                <li><a href="../Notice/notice.html" data-ajax="false">通知公告</a></li>
+                <li><a href="#panel-responsive-page2" data-ajax="false">系统设置</a></li> 
+		</ul>
+
+	</div><!-- /panel -->
+
+	
+<script type="text/javascript" charset="utf-8"> 
+   $(function () { 
+    var Request = new Object();
+    Request = GetRequest();
+    var ID ;
+    ID = Request['ID']; 
+        var db = openDatabase('gBookdb', '1.0', 'gbook DB', 5 * 1024 * 1024);
+        var msg; 
+         db.transaction(function (context) { 
+            context.executeSql('SELECT * FROM seed  WHERE id='+ID, [], function (context, results) { 
+            var len = results.rows.length, i;  
+               for (i = 0; i < len; i++){   
+                 var goodseed=results.rows.item(i).goodseed;  
+                 var wrongseed=results.rows.item(i).wrongseed;;
+                 var wantseed=results.rows.item(i).wantseed;
+                 $("#goodseed").val(goodseed);
+                 $("#wrongseed").val(wrongseed);
+                 $("#wantseed").val(wrongseed); 
+            }
+         });
+        });   
+  });
+  function GetRequest() {
+    var url = location.search; //获取url中"?"符后的字串
+    var theRequest = new Object();
+    if (url.indexOf("?") != -1) {
+      var str = url.substr(1);
+      strs = str.split("&");
+      for(var i = 0; i < strs.length; i ++) {
+         theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+      }
+    }
+    return theRequest;
+}
+  
+  </script >
+</div> 
+ 
+
+</body>
+</html>

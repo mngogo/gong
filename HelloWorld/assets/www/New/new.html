@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>功过格</title>
+    <link rel="stylesheet" href="../css/jquery.mobile-1.3.2.css">
+    <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8"/>
+    <link rel="stylesheet" href="../css/mui.min.css">
+    <script src="../js/jquery.js"></script>
+    <script src="../js/jquery.mobile-1.3.2.min.js"></script>  
+</head>
+<body onload="onLoad()">
+<div data-role="page" id="panel-responsive-page1" data-title="功过格">
+ <style> 
+    .error{
+        font-size: 0.8em;
+        border: 1px solid;
+        margin: 10px 0px;
+        padding:15px 10px 15px 8px;
+        text-align:center;
+        color: #D8000C;
+        background-color: #FFBABA;
+    }
+  
+ </style>
+ 
+    <header>
+			<div class="nvbt iback" onclick="back(true);"></div>
+			<div class="nvtt">我要记录</div>
+		</header>
+
+    <div role="main"  class="ui-content jqm-content jqm-fullwidth">
+       <br><br>
+       <div class='error' id="error"></div>
+      <div data-role="fieldcontain">
+    <label for="textarea-1">正面:</label>
+    <input class="required" type="text" name="goodseed" id="goodseed">
+ <br>
+    <label for="textarea-1">负面:</label>
+    <input class="required" type="text" name="wrongseed" id="wrongseed">
+<br>
+ 
+    <label for="textarea-1">我要:</label>
+    <input class="required" type="text" name="wantseed" id="wantseed">
+<br>
+
+<label for="slider-flip-m">是否公开:</label>
+<select name="slider-flip-m" id="IfSee" data-role="slider" data-mini="true">
+    <option value="off">No</option>
+    <option value="on" selected="">Yes</option>
+</select>
+<br>
+  <button onclick="Add()" class="ui-btn ui-corner-all">提交</button>
+ </div>
+	</div><!-- /content -->
+	
+	<script type="text/javascript" charset="utf-8">
+
+	    function showLoading(){
+	      $.mobile.loadingMessageTextVisible = true;
+	      $.mobile.showPageLoadingMsg("a", "加载中..." );
+	    } 
+	    
+	  $(function () { 
+	  
+	   $("#error").html('').hide(); 
+	        var db = openDatabase('gBookdb', '1.0', 'gbook DB', 5 * 1024 * 1024);
+	        var msg; 
+	        db.transaction(function (context) {
+	           context.executeSql('CREATE TABLE IF NOT EXISTS seed (id INTEGER PRIMARY KEY, seedtype text, goodseed text,wrongseed text,wantseed text,addYear text,addMonth text,AddDay text,addHour text,addMinute text,IfSee text,IfFinish text,addTime text,ifup INTEGER,uuid INTEGER)');  
+	 
+	         });   
+	  });
+	  
+	  function GetRequest() {
+	   var url = location.search; //获取url中"?"符后的字串
+	   var theRequest = new Object();
+	   if (url.indexOf("?") != -1) {
+	      var str = url.substr(1);
+	      strs = str.split("&");
+	      for(var i = 0; i < strs.length; i ++) {
+	         theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+	      }
+	   }
+	   return theRequest;
+	}
+	
+		function getNowFormatDate(){
+			var day = new Date();
+			var Year = 0;
+			var Month = 0;
+			var Day = 0;
+			var CurrentDate = "";
+			//初始化时间
+			Year= day.getFullYear();//ie火狐下都可以
+			Month= day.getMonth()+1;
+			Day = day.getDate();
+			CurrentDate += Year + "-";
+			if (Month >= 10 )
+			{
+			CurrentDate += Month + "-";
+			}
+			else
+			{
+			CurrentDate += "0" + Month + "-";
+			}
+			if (Day >= 10 )
+			{
+			CurrentDate += Day ;
+			}
+			else
+			{
+			CurrentDate += "0" + Day ;
+			}
+			return CurrentDate;
+		} 
+		
+		
+	  function Add() {
+	   
+	    var Request = new Object();
+	    Request = GetRequest();
+	    var ID ;
+	    ID = Request['ID']; 
+	    var myDate = new Date();
+	    var addTime = getNowFormatDate();
+	    var goodseed = $.trim($("#goodseed").val());
+	    var wrongseed = $.trim($("#wrongseed").val());
+	    var wantseed = $.trim($("#wantseed").val());
+	    var addYear = myDate.getFullYear();
+	    var addMonth =myDate.getMonth()+1; 
+	    var AddDay =myDate.getDate(); 
+	    var addHour = myDate.getHours(); 
+	    var minute=myDate.getMinutes(); 
+	    var IfSee=$.trim($("#IfSee").val());
+	    var S4 = function () {
+	        return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
+	    };
+	    var uuid=S4() + S4() + "-" + S4() + "-" + S4() + "-" + S4() + "-" + S4() + S4() + S4();
+	    if (wantseed == ''){
+	                         $("#error").html('想一下，我们要做什么呢.').show();
+	     }
+	     if (wrongseed == ''){
+	                         $("#error").html('请反省一下自己的过失.').show();
+	         }
+	     if (goodseed == ''){
+	                        $("#error").html('请记录下正面的种子吧.').show();
+	         }
+	        
+	    else
+	    { 
+	       var ss='INSERT INTO seed (seedtype,goodseed,wrongseed,wantseed,addYear,addMonth,AddDay,addHour,addMinute,IfSee,IfFinish,addTime,ifup,uuid)  VALUES ("'+ID+'", "'+goodseed+'","'+wrongseed+'", "'+wantseed+'", "'+addYear+'","'+addMonth+'","'+AddDay+'","'+addHour+'", "'+minute+'","'+IfSee+'","0" ,"'+addTime+'","0","'+uuid+'" )';
+	       var db = openDatabase('gBookdb', '1.0', 'gbook DB', 5 * 1024 * 1024);
+	       var msg; 
+	       db.transaction(function (context) {
+	           context.executeSql(ss);  
+	           $.mobile.changePage("Alert.html","slidedown", true, true);
+	         });   
+	    }
+	 }
+  
+  </script >
+
+</div> 
+ 
+
+</body>
+</html>

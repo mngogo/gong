@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>功过格</title>
+    <link rel="stylesheet" href="../css/themes/default/jquery.mobile-1.4.4.min.css">
+    <link rel="stylesheet" href="../_assets/css/jqm-demos.css">
+    <script src="../js/jquery.js"></script>
+    <script src="../js/jquery.mobile-1.4.4.min.js"></script> 
+    <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8"/>
+    <link rel="stylesheet" href="../css/mui.min.css">
+</head>
+<body>
+<div data-role="page" class="jqm-demos ui-responsive-panel" id="panel-responsive-page1" data-title="功过格">
+	
+     <header>
+		<div class="nvbt iback" onclick="back(true);"></div>
+		<div class="nvtt">登录</div>
+   </header>
+<br><br>
+    <div role="main"  class="ui-content jqm-content jqm-fullwidth">
+    
+    
+    <div>
+	        <form class="userform">
+            <label for="name">用户名:</label>
+            <input type="text" name="username" id="username" value=""  data-mini="true">
+            <label for="password">密码:</label>
+            <input type="text" name="password" id="password" value=""   data-mini="true">
+         
+			<center>
+				<a href="javascript:redirect();" data-role="button" data-inline="true" data-theme="b">登录</a>
+			</center>
+		
+        </form>
+
+	</div>
+    
+         <script type="text/javascript">
+				function redirect(){
+				    var name = $("#username").val();
+				    var password = $("#password").val();
+					//验证登录	    
+					$.ajax({url:"http://182.254.242.217:801/App/chkUser.aspx?username="+name+"&password="+password+"",async:false,
+					  success: function(data){
+				       var teamname=data;
+				       var realname=name;
+					     //把用户存储到本地数据库
+					   	 var db = openDatabase('gBookdb', '1.0', 'gbook DB', 5 * 1024 * 1024);
+					   	 db.transaction(function (context) {
+				         context.executeSql('CREATE TABLE IF NOT EXISTS user (id INTEGER PRIMARY KEY, name text, password text, teamname text, realname text)');
+				          var sql='INSERT INTO user (name,password,teamname,realname)  VALUES ("'+name+'", "'+password+'", "'+teamname+'", "'+realname+'" )';
+						    context.executeSql(sql);  
+				         }); 
+				        
+					   	$.mobile.changePage("Alert1.html","slidedown", true, true);
+					   },
+					    error: function(){
+					    alert("验证失败！");
+					   }       
+					  });
+					//验证结束	    
+				}
+				
+			</script>
+    
+		
+	</div><!-- /content -->
+
+
+</div>
+ 
+</body>
+</html>

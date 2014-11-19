@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>功过格</title>
+    <link rel="stylesheet" href="../css/themes/default/jquery.mobile-1.4.4.min.css">
+    <link rel="stylesheet" href="../_assets/css/jqm-demos.css">
+    <script src="../js/jquery.js"></script>
+    <script src="../_assets/js/index.js"></script> 
+    <script src="../js/jquery.mobile-1.4.4.min.js"></script> 
+    <style type="text/css" media="all">
+	    #header {
+        color: #FCFCFC;
+        border: 0px solid;
+		font-size:18;
+		text-align:center;
+		background-color: #15A230;
+	   }
+	</style>
+    
+</head>
+<body>
+<div data-role="page" class="jqm-demos ui-responsive-panel" id="panel-responsive-page1" data-title="功过格">
+ <!-- jQuery -->
+    <div data-role="header"  id="header" data-position="fixed">
+        <h1>个人账户</h1>
+        <a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
+        <a href="../default.html" data-icon="home" data-iconpos="notext">Add</a>
+    </div><!-- /header -->
+    <div data-role="panel" data-display="push" data-theme="b" id="nav-panel">
+
+		<ul data-role="listview">
+            <li data-icon="delete"><a href="#" data-rel="close">关闭</a></li>
+                <li><a href="../New/SelectSeed.html" data-ajax="false">我要记录</a></li>
+                <li><a href="../New/TodaySeed.html" data-ajax="false">今天记录</a></li>
+                <li><a href="../New/Best.html" data-ajax="false">今天最好</a></li>
+                <li><a href="../New/NoFinish.html" data-ajax="false">今天完成</a></li>
+                <li><a href="../Team/team.html" data-ajax="false">团队记录</a></li>
+                <li><a href="../Upload/seedup.html" data-ajax="false">上传种子</a></li>
+                <li><a href="../New/HistoryList.html" data-ajax="false">历史记录</a></li>
+                <li><a href="../Order/order.html" data-ajax="false">全球排名</a></li>
+                <li><a href="../Download/seeddown.html" data-ajax="false">记录下载</a></li>
+                <li><a href="../Notice/notice.html" data-ajax="false">通知公告</a></li>
+                <li><a href="#panel-responsive-page2" data-ajax="false">系统设置</a></li> 
+		</ul>
+
+	</div><!-- /panel -->
+	
+    <div role="main"  class="ui-content jqm-content jqm-fullwidth">
+		<div data-role="content" data-theme="d">
+			<form action="#" method="post" id="regForm">
+			<center>
+			<!-- 头像选择 start -->
+			<div style="position: relative">
+					<a class="show-ico-btn" title="选择头像"><img
+							class="focus-ico"
+							src="images/head/8.jpeg"
+							alt="选择头像" width="180" height="180">
+					</a><br><center><div id="names"></div></center>
+					<div style="display:none">
+					<input type="text"  name="headico" id="headico" value="">
+					</div>
+			</div>
+			<!-- 头像选择 end -->
+			</center>
+			 
+				<p>用户等级：</p>
+				<p>团队名称：<center><div id="teamname"></div></center></p>
+				<p>连续登录：</p>
+				<br><center>
+				<a href="javascript:deleteUser();" data-role="button" data-inline="true" data-theme="c">注销</a>
+				<a href="../default.html" data-role="button" data-inline="true" data-theme="c" data-transition="slide">返回</a>
+				</center>
+			</form>
+	
+	  <script  type="text/javascript">
+			function deleteUser(){
+			        var db = openDatabase('gBookdb', '1.0', 'gbook DB', 5 * 1024 * 1024);
+					db.transaction(function (context) {
+					var sql='DROP TABLE user';
+			        context.executeSql(sql);  
+			        alert("已退出！");
+			         $.mobile.changePage("../default.html","slidedown", true, true);
+					}); 
+				}
+			</script>
+	
+
+    <script language="javascript">
+	 $(function(){
+		//查询是否已经登录
+		var db = openDatabase('gBookdb', '1.0', 'gbook DB', 1 * 1024 * 1024);
+        db.transaction(function (context) {
+           context.executeSql('SELECT * FROM user', [], function (context, results) {
+            var len = results.rows.length;
+			if(len==0)
+			{
+			document.getElementById('names').innerHTML = '用户名';
+			}else {
+	        var name=results.rows.item(0).realname;
+	        var teamname=results.rows.item(0).teamname;
+            document.getElementById('names').innerHTML = name;
+            document.getElementById('teamname').innerHTML = teamname;
+			}
+          
+         });
+        }); 
+		//查询结束
+		});
+	</script>
+	
+	</div><!-- /content -->
+	
+</div><!-- /page -->
+ 
+</body>
+</html>

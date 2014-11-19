@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>功过格</title>
+    <link rel="stylesheet" href="../css/themes/default/jquery.mobile-1.4.4.min.css">
+    <link rel="stylesheet" href="../_assets/css/jqm-demos.css">
+    <script src="../js/jquery.js"></script>
+    <script src="../_assets/js/index.js"></script> 
+    <script src="../js/jquery.mobile-1.4.4.min.js"></script>  
+    
+</head>
+<body>
+<div data-role="page" class="jqm-demos ui-responsive-panel" id="home" data-title="功过格">
+ <style> 
+            .error{
+                font-size: 0.8em;
+                border: 1px solid;
+                margin: 10px 0px;
+                padding:15px 10px 15px 8px;
+                text-align:center;
+                color: #D8000C;
+                background-color: #FFBABA;
+            }
+            </style>
+
+ 
+<script type="text/javascript" charset="utf-8">
+  $(function () { 
+  
+   var Request = new Object();
+    Request = GetRequest();
+    var ID ;
+    ID = Request['ID'];
+    alert(123); 
+    alert(ID);
+        var db = openDatabase('gBookdb', '1.0', 'gbook DB', 5 * 1024 * 1024);
+         db.transaction(function (context) { 
+            context.executeSql('SELECT * FROM seed  WHERE id='+ID, [], function (context, results) { 
+            var len = results.rows.length, i;  
+               for (i = 0; i < len; i++){   
+                 var goodseed=results.rows.item(0).goodseed;  
+                 alert(goodseed);
+                 var wrongseed=results.rows.item(0).wrongseed;;
+                 var wantseed=results.rows.item(0).wantseed;
+                 $("#goodseed").val(goodseed);
+                 $("#wrongseed").val(wrongseed);
+                 $("#wantseed").val(wantseed); 
+            }
+         });
+        });   
+  
+   $("#error").html('').hide(); 
+  
+  function GetRequest() {
+   var url = location.search; //获取url中"?"符后的字串
+   var theRequest = new Object();
+   if (url.indexOf("?") != -1) {
+      var str = url.substr(1);
+      strs = str.split("&");
+      for(var i = 0; i < strs.length; i ++) {
+         theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+      }
+   }
+   return theRequest;
+}
+ 
+
+  function edit() {
+   
+    var Request = new Object();
+    Request = GetRequest();
+    var ID ;
+    ID = Request['ID']; 
+    alert(ID);
+    var myDate = new Date() 
+    var goodseed = $.trim($("#goodseed").val());
+    var wrongseed = $.trim($("#wrongseed").val());
+    var wantseed = $.trim($("#wantseed").val());
+    var addYear = myDate.getFullYear();
+    var addMonth =myDate.getMonth()+1; 
+    var AddDay =myDate.getDate(); 
+    var addHour = myDate.getHours(); 
+    var minute=myDate.getMinutes(); 
+    var IfSee=$.trim($("#IfSee").val());
+    if (wantseed == ''){
+                         $("#error").html('想一下，我们要做什么呢.').show();
+     }
+     if (wrongseed == ''){
+                         $("#error").html('请反省一下自己的过失.').show();
+         }
+     if (goodseed == ''){
+                        $("#error").html('请记录下正面的种子吧.').show();
+         }
+        
+    else
+    { 
+       var ss='update seed set  goodseed="'+goodseed+'",wrongseed="'+wrongseed+'",wantseed="'+wantseed+'",addYear="'+addYear+'",addMonth="'+addMonth+'",AddDay="'+AddDay+'",addHour="'+addHour+'",addMinute="'+minute+'",IfSee="'+IfSee+'" where id="'+ID+'"';
+     
+       var db = openDatabase('gBookdb', '1.0', 'gbook DB', 5 * 1024 * 1024);
+       var msg; 
+       db.transaction(function (context) {
+           context.executeSql(ss);  
+           $.mobile.changePage("Alert.html","slidedown", true, true);
+         });   
+    }
+ }
+ 
+    });
+  </script >
+    <div data-role="header">
+        <h1>功过格</h1>
+        <a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
+        <a href="#add-form" data-icon="gear" data-iconpos="notext">Add</a>
+    </div><!-- /header -->
+
+    <div role="main"  class="ui-content jqm-content jqm-fullwidth">
+       
+       <div class='error' id="error"></div>
+      <div class="ui-field-contain">
+    <label for="textarea-1">正面:</label>
+    <textarea   class="required" name="goodseed" id="goodseed"></textarea>
+</div>
+ 
+<div class="ui-field-contain">
+    <label for="textarea-1">负面:</label>
+    <textarea   class="required" name="wrongseed" id="wrongseed"></textarea>
+</div>
+
+ 
+<div class="ui-field-contain">
+    <label for="textarea-1">我要:</label>
+    <textarea   class="required" name="wantseed"  id="wantseed"></textarea>
+</div> 
+
+
+<label for="slider-flip-m">是否公开:</label>
+<select name="slider-flip-m" id="IfSee" data-role="slider" data-mini="true">
+    <option value="off">No</option>
+    <option value="on" selected="">Yes</option>
+</select>
+  <button onclick="edit()" class="ui-btn ui-corner-all">修改</button>
+ 
+	</div><!-- /content -->
+
+	<div data-role="panel" data-display="push" data-theme="b" id="nav-panel">
+
+		<ul data-role="listview">
+            <li data-icon="delete"><a href="#" data-rel="close">关闭</a></li>
+                <li><a href="../New/SelectSeed.html" data-ajax="false">我要记录</a></li>
+                <li><a href="../New/TodaySeed.html" data-ajax="false">今天记录</a></li>
+                <li><a href="../New/Best.html" data-ajax="false">今天最好</a></li>
+                <li><a href="../New/NoFinish.html" data-ajax="false">今天完成</a></li>
+                <li><a href="../Team/team.html" data-ajax="false">团队记录</a></li>
+                <li><a href="../Upload/seedup.html" data-ajax="false">上传种子</a></li>
+                <li><a href="../New/HistoryList.html" data-ajax="false">历史记录</a></li>
+                <li><a href="../Order/order.html" data-ajax="false">全球排名</a></li>
+                <li><a href="../Download/seeddown.html" data-ajax="false">记录下载</a></li>
+                <li><a href="../Notice/notice.html" data-ajax="false">通知公告</a></li>
+                <li><a href="#panel-responsive-page2" data-ajax="false">系统设置</a></li> 
+		</ul>
+
+	</div><!-- /panel -->
+
+	<div data-role="panel" data-position="right" data-display="reveal" data-theme="a" id="add-form">
+
+        <form class="userform">
+
+        	<h2>Login</h2>
+
+            <label for="name">Username:</label>
+            <input type="text" name="name" id="name" value="" data-clear-btn="true" data-mini="true">
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" value="" data-clear-btn="true" autocomplete="off" data-mini="true">
+
+            <div class="ui-grid-a">
+                <div class="ui-block-a"><a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-mini">Cancel</a></div>
+                <div class="ui-block-b"><a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-mini">Save</a></div>
+			</div>
+        </form>
+
+	</div><!-- /panel -->
+
+</div> 
+
+
+
+// ------------------------------------
+
+
+<div data-role="page" class="jqm-demos ui-responsive-panel" id="AlertPage" data-title="功过格">
+
+   <div data-role="header">
+        <h1>功过格</h1>
+        
+    </div><!-- /header -->
+    <div role="main"  class="ui-content jqm-content jqm-fullwidth">
+
+  <div data-role="header" data-theme="a">
+        <h1>操作成功</h1>
+        </div>
+        <div role="main" class="ui-content">
+        <p>     记录成功，愿今天断恶行善的功德能够回向给所有众生。您是要否继续记录呢？</p>
+        <a href="../default.html" class="ui-btn ui-corner-all  ui-btn-inline ui-btn-b"  data-transition="slide">取消</a>
+        <a href="SelectSeed.html" class="ui-btn ui-corner-all ui-btn-inline ui-btn-b"   data-transition="flow">是的</a>
+        </div>
+       </div>
+	</div><!-- /content -->
+
+	  
+  
+  
+</div><!-- /page -->
+
+
+</body>
+</html>

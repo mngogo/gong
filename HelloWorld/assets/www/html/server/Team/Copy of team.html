@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title></title>
+
+<link rel="stylesheet" href="../../../css/themes/default/jquery.mobile-1.4.4.min.css">
+<link rel="stylesheet" type="text/css" href="css/iscroll.css">
+<link rel="stylesheet" href="../../../css/common.css" type="text/css" charset="utf-8"/>
+<link rel="stylesheet" href="../../../css/mui.min.css">
+<script type="text/javascript" src="../../../js/common.js"></script>
+
+<script src="../../../js/jquery.js" type="text/javascript"></script>
+<script src="../../../js/jquery.mobile-1.4.4.min.js"></script>
+<script type="text/javascript" src="../../../js/common.js"></script>
+		<style>
+	.mui-h6, h5, h4 {
+		font-weight: 500;
+		margin: 0;
+		margin-left: 5px;
+		text-transform: none;
+	}
+	 p {
+		font-weight: 500;
+		text-align: left;
+	}
+	.mui-table-view .mui-table-view-cell {
+		padding-right: 0;
+	}
+	.oa-task-cell.mui-table .mui-table-cell, .oa-contact-cell.mui-table .mui-table-cell {
+		padding: 11px 0;
+		vertical-align: middle;
+	}
+
+	.oa-task-cell, .oa-contact-cell {
+		position: relative;
+		margin: -11px 0;
+	}
+
+	.oa-task-time {
+		width: 15%;
+	}
+	.oa-task-status {
+		width: 30%;
+		-webkit-transition: width .4s;
+		transition: width .4s;
+	}
+	.oa-task-time span, .oa-task-status, .oa-task-action {
+		text-align: center;
+	}
+	.oa-task-cell.mui-table .mui-table-cell.oa-task-content {
+		width: 55%;
+		padding-left: 15px;
+	}
+	.oa-task-time-start, .oa-task-time-end {
+		display: block;
+		width: 50px;
+	}
+
+	.oa-contact-avatar {
+		width: 75px;
+	}
+	.oa-contact-avatar img {
+		border-radius: 50%;
+	}
+	.oa-contact-content {
+		width: 100%;
+	}
+	.oa-contact-name {
+		margin-right: 20px;
+	}
+	.oa-contact-name, oa-contact-position {
+		float: left;
+	}
+	/*左拖，右拖，超出该区域宽度后，释放触发slideleft,slideright事件*/
+	/*重要：该样式定制拉出的功能图标区域的width(必须)*/
+	.oa-task-action {
+		background-color: #527fdc;
+		color: white;
+		width: 25%;
+		line-height: 62px;
+	}
+	/*左拖拉出，右拖关闭菜单*/
+	/*重要：该样式定制拉出的功能菜单区域的margin-left(必须,该值是功能菜单距离mui-slider-cell左侧的位置)*/
+	.oa-contact-action {
+		background-color: #527fdc;
+		margin-left: 75px;
+		height: 87px;
+	}
+	.oa-contact-action .mui-icon {
+		width: 20%;
+		color: white;
+		text-align: center;
+		line-height: 87px;
+		height: 87px;
+		float: left;
+	}
+	.oa-contact-action .mui-icon:first-child, .oa-contact-action .mui-icon:last-child {
+		width: 40%;
+	}
+</style>
+		<link rel="stylesheet" href="../../../css/common.css" type="text/css" charset="utf-8"/>
+		<link rel="stylesheet" href="../../../css/mui.min.css">
+		<script src="../../../js/mui.min.js"></script>
+		<script src="../../../js/app.js"></script>
+<script type="text/javascript" src="js/iscroll.js"></script>
+
+<script type="text/javascript">
+
+var myScroll,
+	pullDownEl, pullDownOffset,
+	pullUpEl, pullUpOffset,
+	generatedCount = 0;
+
+       
+/**
+ * 下拉刷新 （自定义实现此方法）
+ * myScroll.refresh();		// 数据加载完成后，调用界面更新方法
+ */
+
+function pullDownAction () {
+	  $.ajax({url:"http://192.168.1.62:801/App/Teamseedlist1.aspx?teamid=北京队&Page=2",async:false,
+	  dataType: "json",
+	  success: function(data){
+	   var content='';
+	   $.each(data['ds'], function(i, n){	
+		    content = content + "<li>";
+			content = content + "<h2>";
+			content = content + n.Adderid;
+			content = content + "</h2>";	
+			content = content + "<p>";
+			content = content + n.adddate;
+			content = content + "</p>";
+			content = content + "<p>";
+			content = content +"好的："+ n.goodseed;
+			content = content + "</p>";
+			content = content + "<p>";
+			content = content +"坏的："+ n.wrongseed;
+			content = content + "</p>";
+			content = content + "<p>";
+			content = content +"我要："+ n.wantseed;
+			content = content + "</p>";
+			content = content + "</li>";
+		   
+	         
+		   	//存储结束
+	   	}); //循环结束
+	   	 $("#thelist").append(content).listview('refresh');
+	      },
+	     error: function(){
+	     }       
+	  
+	  });	
+		myScroll.refresh();		//数据加载完成后，调用界面更新方法   Remember to 
+}
+
+/**
+ * 滚动翻页 （自定义实现此方法）
+ * myScroll.refresh();		// 数据加载完成后，调用界面更新方法
+ */
+function pullUpAction () {
+}
+
+/**
+ * 初始化iScroll控件
+ */
+function loaded() {
+	//清除所占的内存空间
+	if(myScroll!=null){
+		myScroll.destroy();
+	}
+
+	pullDownEl = document.getElementById('pullDown');
+	pullDownOffset = pullDownEl.offsetHeight;
+	pullUpEl = document.getElementById('pullUp');	
+	pullUpOffset = pullUpEl.offsetHeight;
+	
+	myScroll = new iScroll('wrapper', {
+		useTransition: true,    //默认为true
+		//useTransition: false, 
+		topOffset: pullDownOffset,
+		onRefresh: function () {
+			if (pullDownEl.className.match('loading')) {
+				pullDownEl.className = '';
+				pullDownEl.querySelector('.pullDownLabel').innerHTML = '下拉刷新...';
+			} else if (pullUpEl.className.match('loading')) {
+				pullUpEl.className = '';
+				pullUpEl.querySelector('.pullUpLabel').innerHTML = '上拉加载更多...';
+			}
+		},
+		onScrollMove: function () {
+			if (this.y > 5 && !pullDownEl.className.match('flip')) {
+				pullDownEl.className = 'flip';
+				pullDownEl.querySelector('.pullDownLabel').innerHTML = '松手开始更新...';
+				this.minScrollY = 0;
+			} else if (this.y < 5 && pullDownEl.className.match('flip')) {
+				pullDownEl.className = '';
+				pullDownEl.querySelector('.pullDownLabel').innerHTML = '下拉刷新...';
+				this.minScrollY = -pullDownOffset;
+			} else if (this.y < (this.maxScrollY - 5) && !pullUpEl.className.match('flip')) {
+				pullUpEl.className = '';
+				pullUpEl.querySelector('.pullUpLabel').innerHTML = '下拉刷新...';
+				this.maxScrollY = this.maxScrollY;
+			} else if (this.y > (this.maxScrollY + 5) && pullUpEl.className.match('flip')) {
+				pullUpEl.className = '';
+				pullUpEl.querySelector('.pullUpLabel').innerHTML = '上拉加载更多...';
+				this.maxScrollY = pullUpOffset;
+			}
+		},
+		onScrollEnd: function () {
+			if (pullDownEl.className.match('flip')) {
+				pullDownEl.className = 'loading';
+				pullDownEl.querySelector('.pullDownLabel').innerHTML = '加载中...';				
+				pullDownAction();	// Execute custom function (ajax call?)
+			} else if (pullUpEl.className.match('flip')) {
+				pullUpEl.className = 'loading';
+				pullUpEl.querySelector('.pullUpLabel').innerHTML = '加载中...';				
+				pullUpAction();	// Execute custom function (ajax call?)
+			}
+		}
+	});
+	
+	setTimeout(function () { document.getElementById('wrapper').style.left = '0'; }, 800);
+}
+
+//初始化绑定iScroll控件 
+document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+
+//document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 200); }, false);
+document.addEventListener('DOMContentLoaded', loaded, false); 
+</script>
+<style type="text/css" media="all">
+#h1 {
+	font-size:16px;
+	text-align:center;
+}
+</style>
+
+</head>
+<body>
+
+<div data-role="page" class="jqm-demos ui-responsive-panel" id="panel-responsive-page1" data-title="功过格">
+<header>
+			<div class="nvbt iback" onclick="back(true);"></div>
+			<div class="nvtt">团队记录</div>
+		</header>
+		<div id="wrapper">
+			<div id="scroller">
+				<div id="pullDown">
+					<span class="pullDownIcon"></span><span class="pullDownLabel">下拉加载...</span>
+				</div>
+				<ul data-role="listview" data-icon="false" id="thelist">		    
+				</ul>		
+				<div id="pullUp">
+					<span class="pullUpIcon"></span><span class="pullUpLabel">下拉刷新...</span>
+				</div>
+			</div>
+		</div>
+
+</div>
+</body>
+</html>

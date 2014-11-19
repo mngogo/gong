@@ -1,0 +1,207 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+		<meta name="HandheldFriendly" content="true"/>
+		<meta name="MobileOptimized" content="320"/>
+		<title>Hello H5+</title>
+		<script type="text/javascript" src="../../js/common.js"></script>
+		<style>
+	.mui-h6, h5, h4 {
+		font-weight: 500;
+		margin: 0;
+		margin-left: 5px;
+		text-transform: none;
+	}
+	 p {
+		font-weight: 500;
+		text-align: left;
+	}
+	.mui-table-view .mui-table-view-cell {
+		padding-right: 0;
+	}
+	.oa-task-cell.mui-table .mui-table-cell, .oa-contact-cell.mui-table .mui-table-cell {
+		padding: 11px 0;
+		vertical-align: middle;
+	}
+
+	.oa-task-cell, .oa-contact-cell {
+		position: relative;
+		margin: -11px 0;
+	}
+
+	.oa-task-time {
+		width: 15%;
+	}
+	.oa-task-status {
+		width: 30%;
+		-webkit-transition: width .4s;
+		transition: width .4s;
+	}
+	.oa-task-time span, .oa-task-status, .oa-task-action {
+		text-align: center;
+	}
+	.oa-task-cell.mui-table .mui-table-cell.oa-task-content {
+		width: 55%;
+		padding-left: 15px;
+	}
+	.oa-task-time-start, .oa-task-time-end {
+		display: block;
+		width: 50px;
+	}
+
+	.oa-contact-avatar {
+		width: 75px;
+	}
+	.oa-contact-avatar img {
+		border-radius: 50%;
+	}
+	.oa-contact-content {
+		width: 100%;
+	}
+	.oa-contact-name {
+		margin-right: 20px;
+	}
+	.oa-contact-name, oa-contact-position {
+		float: left;
+	}
+	/*左拖，右拖，超出该区域宽度后，释放触发slideleft,slideright事件*/
+	/*重要：该样式定制拉出的功能图标区域的width(必须)*/
+	.oa-task-action {
+		background-color: #527fdc;
+		color: white;
+		width: 25%;
+		line-height: 62px;
+	}
+	/*左拖拉出，右拖关闭菜单*/
+	/*重要：该样式定制拉出的功能菜单区域的margin-left(必须,该值是功能菜单距离mui-slider-cell左侧的位置)*/
+	.oa-contact-action {
+		background-color: #527fdc;
+		margin-left: 150px;
+		height: 87px;
+	}
+	.oa-contact-action .mui-icon {
+		width: 20%;
+		color: white;
+		text-align: center;
+		line-height: 87px;
+		height: 87px;
+		float: left;
+	}
+	.oa-contact-action .mui-icon:first-child, .oa-contact-action .mui-icon:last-child {
+		width: 50%;
+	}
+</style>
+<style>
+    .mui-btn{
+        margin-top: 10px;
+        margin-right: 10px;
+        margin-left: 5px;
+    }
+    .mui-btn.mui-btn-mini{
+        margin-left: 13px;
+        margin-right: 18px;
+    }
+</style>
+		<link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8"/>
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../js/app.js"></script>
+		<script type="text/javascript">
+	window.onload = function() { 
+			 //创建数据库
+			var db = openDatabase("gBookdb", "1.0", "gbook DB", 1 *1024 * 1024); 
+			// 创建表
+			db.transaction( function(tx) { 
+			    tx.executeSql(
+			        "CREATE TABLE IF NOT EXISTS count (id INTEGER PRIMARY KEY, type text, begin INTEGER,end INTEGER,add1 text,add2 text,add3 text,begintime text,endtime text)", 
+			         [], 
+			        function(){ }, 
+			        function(tx, error){}
+			    );
+			}); 
+			
+			
+            // 查询
+			db.transaction( function(tx) { 
+			    tx.executeSql(
+			        "SELECT * FROM count", [],  
+			         function(tx, result) {
+			            var rows = result.rows, length = rows.length, i=0;
+			            if(length>0){
+							var content='';
+			            	for(i; i < length; i++) { 
+			            		var now=parseInt(rows.item(i)['add1'])+parseInt(rows.item(i)['add2']);
+			            	  	content+='<li  class="'+"mui-table-view-cell"+'">';
+				            	content+='<div class="'+"mui-slider-cell"+'">';
+				            	content+='<div class="'+"oa-contact-cell mui-table"+'">';
+				            	content+='<div class="'+"oa-contact-avatar mui-table-cell"+'">';
+				            	content+='<img  src="'+"../../img/count.png"+'">';
+				            	content+='</div>';
+				            	content+='<div class="'+"oa-contact-content mui-table-cell"+'">';
+				            	content+='<div class="'+"mui-clearfix"+'">';
+				            	content+='<h4 class="'+"oa-contact-name"+'">';
+				            	content+=rows.item(i)['type'];
+				            	content+='</h4>';
+				            	content+='<span class="'+"oa-contact-position mui-h6"+'">';
+				            	content+='</span>';
+				            	content+='</div>';
+				            	content+='<p class="'+"oa-contact-email mui-h6"+'">';
+				            	content+=now+"/"+rows.item(i)['end'];
+				            	content+='</p>';
+				            	content+='</div>';
+				            	content+='</div>';
+				            	content+='<div class="'+"mui-slider-handle oa-contact-action mui-table-cell mui-disabled"+'">';
+				            	content+='<span class="'+"mui-icon mui-icon-navigate  mui-btn-danger"+'" onclick="'+"javascript:ji1("+rows.item(i)['id']+")"+'">';
+				            	content+='</span>';
+				            	content+='<span class="'+"mui-icon mui-icon-compose"+'" onclick="'+"javascript:ji2("+rows.item(i)['id']+")"+'">';
+				            	content+='</span>';
+				            	content+='</div>';
+				            	content+='</div>';
+				            	content+='</li>';
+				            } 
+				           
+				             document.getElementById("OA_contact").innerHTML = content;
+			            }else{
+			            	mui.toast('目前还没有计数器，请先去【设置】添加您的计数器类型！');
+			            }
+			       
+			        }, 
+			        function(tx, error){
+			           // alert('Select Failed: ' + error.message);
+			        }
+			    ); 
+			});
+			
+		};
+		
+		function ji1(i){
+		    window.localStorage.setItem("countid1",i);
+	        window.location.href='docount.html';
+		}
+		
+		function ji2(i){
+		    window.localStorage.setItem("countid2",i);
+	        window.location.href='update.html';
+		}
+		
+</script>
+<script type="text/javascript" charset="utf-8">
+			function clicked(){
+				window.location.href="../../menu.html"; 
+			}
+        </script>
+	</head>
+	<body>
+		<header>
+			<div class="nvbt iback" onclick="clicked();"></div>
+			<div class="nvtt">计数器类型</div>
+		</header>
+		<div id="dcontent" class="dcontent">
+			
+			<ul id="OA_contact" class="mui-table-view mui-table-view-striped mui-table-view-condensed">	</ul>
+			
+		</div>
+	</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta  name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../css/themes/default/jquery.mobile-1.4.4.min.css">
+    <link rel="stylesheet" href="../_assets/css/jqm-demos.css">
+     <style type="text/css" media="all">
+	    #header {
+        color: #FCFCFC;
+        border: 0px solid;
+		font-size:18;
+		text-align:center;
+		background-color: #15A230;
+	   }
+	</style>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/jquery.mobile-1.4.4.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+	        var id= window.localStorage.getItem("id");
+	        var db = openDatabase('gBookdb', '1.0', 'gbook DB', 1 * 1024 * 1024);
+	        var k="  "
+	        db.transaction(function (context) {
+	            context.executeSql('SELECT * FROM notice WHERE noticeid=' +id, [], function (context, results) {
+	            document.getElementById("title").innerText=results.rows.item(0).title;
+	            document.getElementById("time").innerText=results.rows.item(0).addtime+" "+results.rows.item(0).adder;
+	            document.getElementById("content").innerText=k+results.rows.item(0).content;
+	         });
+	        }); 
+        });
+   </script>
+   </head>
+
+<body>
+<div data-role="page" class="jqm-demos ui-responsive-panel" id="panel-responsive-page1" data-title="功过格">
+
+    <div data-role="header"  id="header" data-position="fixed">
+        <h1>公告信息</h1>
+        <a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
+        <a href="../default.html" data-iconpos="notext" data-icon="home">首页</a>
+    </div><!-- /header -->
+
+
+    <div role="main" class="ui-content jqm-content jqm-fullwidth"> 
+	                  <center>
+	                    <h3 id="title">
+	                    </h3>
+	                    <p id="time">
+	                    </p>
+	                    </center>
+	                    <p id="content">
+	                    </p>
+			</div>
+			
+			<div data-role="panel" data-display="push" data-theme="b" id="nav-panel">
+
+		<ul data-role="listview">
+            <li data-icon="delete"><a href="#" data-rel="close">关闭</a></li>
+                <li><a href="../New/SelectSeed.html" data-ajax="false">我要记录</a></li>
+                <li><a href="../New/TodaySeed.html" data-ajax="false">今天记录</a></li>
+                <li><a href="../New/Best.html" data-ajax="false">今天最好</a></li>
+                <li><a href="../New/NoFinish.html" data-ajax="false">今天完成</a></li>
+                <li><a href="../Team/team.html" data-ajax="false">团队记录</a></li>
+                <li><a href="../Upload/seedup.html" data-ajax="false">上传种子</a></li>
+                <li><a href="../New/HistoryList.html" data-ajax="false">历史记录</a></li>
+                <li><a href="../Order/order.html" data-ajax="false">全球排名</a></li>
+                <li><a href="../Download/seeddown.html" data-ajax="false">记录下载</a></li>
+                <li><a href="../Notice/notice.html" data-ajax="false">通知公告</a></li>
+                <li><a href="#panel-responsive-page2" data-ajax="false">系统设置</a></li> 
+		</ul>
+
+	</div><!-- /panel -->
+	
+			</div>
+            </body>
+          </html>

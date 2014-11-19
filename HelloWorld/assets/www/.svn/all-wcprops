@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/winway1234/!svn/ver/2/trunk/assets/www
+END
+config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/winway1234/!svn/ver/2/trunk/assets/www/config.xml
+END
+default.html
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/winway1234/!svn/ver/25/trunk/assets/www/default.html
+END
+cordova.js
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/winway1234/!svn/ver/2/trunk/assets/www/cordova.js
+END
+cordova_plugins.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/winway1234/!svn/ver/2/trunk/assets/www/cordova_plugins.js
+END
+index.html
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/winway1234/!svn/ver/2/trunk/assets/www/index.html
+END
+icon.png
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/winway1234/!svn/ver/2/trunk/assets/www/icon.png
+END
+phonegap.js
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/winway1234/!svn/ver/2/trunk/assets/www/phonegap.js
+END
+spec.html
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/winway1234/!svn/ver/2/trunk/assets/www/spec.html
+END
+set.html
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/winway1234/!svn/ver/2/trunk/assets/www/set.html
+END
